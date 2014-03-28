@@ -4,6 +4,9 @@ public class ZombieHordeGraph {
 	float B,C,W,K;
 	int p[][][];
 	int o[];
+	public static void main(String[]a){
+		(new ZombieHordeGraph()).game();
+	}
 	/**
 	 * Initially I will read the input from STDIN.
 	 * Format:
