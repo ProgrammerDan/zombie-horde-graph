@@ -1,7 +1,8 @@
+import java.util.Scanner;
 public class ZombieHordeGraph {
 	int a=100,b,m,n,i,j,r,z,d,y,D,R,Z;
-	float B,C,R,K;
-	float p[][][];
+	float B,C,W,K;
+	int p[][][];
 	int o[];
 	/**
 	 * Initially I will read the input from STDIN.
@@ -15,11 +16,11 @@ public class ZombieHordeGraph {
 	 * 1 < n <= 500
 	 */
 	ZombieHordeGraph() {
-		Scanner in = Scanner(System.in);
+		Scanner in = new Scanner(System.in);
 		m = in.nextInt();
 		n = in.nextInt();
-		p[][][] = new float[m+1][m+1][n+1];
-		o[] = new int[m+1];
+		p = new int[m+1][m+1][n+1];
+		o = new int[m+1];
 		for (b=0;b<n;b++){
 			i = in.nextInt();
 			j = in.nextInt();
@@ -33,19 +34,19 @@ public class ZombieHordeGraph {
 
 	void game() {
 		// start at 1.
-		D=1;z=0
+		D=1;z=0;
 		do{
 			System.out.printf("%i - ",D);
 			incOutposts();
-			int[]Q=pickDestinationArg1(D);
+			int[]Q=pickDestinationAlg1(D);
 			Z=p[D][Q[0]][Q[1]];//#zombies on selected route
 			z+=(a>Z)?Z:a;//zombies killed
 			a=a+o[Q[0]]-Z;//ending ammunition
-			R=R+(o[Q[0]]-Z-R)/++K;//running average of ammunition gain
+			W=W+(o[Q[0]]-Z-W)/++K;//running average of ammunition gain
 			D=Q[0];//move to outpost
 			o[D]=0;//reset outpost
-			System.out.printf("%i : %i : %i : %5.2f\n",D,z,a,R);
-		}while(a>=0&&R<0f);
+			System.out.printf("%i : %i : %i : %5.2f\n",D,z,a,W);
+		}while(a>=0&&W<0f);
 	}
 
 	void incOutposts(){
