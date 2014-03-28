@@ -41,7 +41,7 @@ public class ZombieHordeGraph {
 		do{
 			System.out.printf("%d - ",D);
 			incOutposts();
-			int[]Q=pickDestinationAlg2(D);
+			int[]Q=pickDestinationAlg3(D);
 			Z=p[D][Q[0]][Q[1]];//#zombies on selected route
 			z+=(a>Z)?Z:a;//zombies killed
 			a=a+o[Q[0]]-Z;//ending ammunition
@@ -88,6 +88,26 @@ public class ZombieHordeGraph {
 					B=C;n=d;y=r;
 				}
 			}
+		return new int[]{n,y};
+	}
+
+	/**
+	 * Maximize ratio of ammunition gained over zombies killed in two steps.
+	 */
+	int[] pickDestinationAlg3(int s){
+		int n,y;n=y=0;float B,C;B=C=0f;
+		int[] x;
+		for(int d=1;d<m;d++){// Try every destination
+			x=pickDestinationAlg1(d);
+			for(int r=1;r<=p[s][d][0];r++){ // Try every route
+				C=(o[d]+3f+o[x[0]])/(p[s][d][r]+p[d][x[0]][x[1]]);
+				if (C>B){
+				//	System.out.printf("  - %d %d : %d : %.0f : %5.2f\n",
+				//		d, r, p[s][d][r], o[d]+1f, C);
+					B=C;n=d;y=r;
+				}
+			}
+		}
 		return new int[]{n,y};
 	}
 
