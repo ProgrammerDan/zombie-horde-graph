@@ -39,7 +39,7 @@ public class ZombieHordeGraph {
 		// start at 1.
 		D=1;z=0;
 		do{
-			System.out.printf("%i - ",D);
+			System.out.printf("%d - ",D);
 			incOutposts();
 			int[]Q=pickDestinationAlg1(D);
 			Z=p[D][Q[0]][Q[1]];//#zombies on selected route
@@ -48,7 +48,7 @@ public class ZombieHordeGraph {
 			W=W+(o[Q[0]]-Z-W)/++K;//running average of ammunition gain
 			D=Q[0];//move to outpost
 			o[D]=0;//reset outpost
-			System.out.printf("%i : %i : %i : %5.2f\n",D,z,a,W);
+			System.out.printf("%d : %d : %d : %5.2f\n",D,z,a,W);
 		}while(a>=0&&W<0f);
 	}
 
@@ -64,8 +64,10 @@ public class ZombieHordeGraph {
 		n=y=0;B=C=0f;
 		for(d=1;d<m;d++) // Try every destination
 			for(r=1;r<=p[s][d][0];r++){ // Try every route
-				C=p[s][d][r]/(o[d]+1f);
+				C=(o[d]+1f)/p[s][d][r];
 				if (C>B){
+				//	System.out.printf("  - %d %d : %d : %.0f : %5.2f\n",
+				//		d, r, p[s][d][r], o[d]+1f, C);
 					B=C;n=d;y=r;
 				}
 			}
