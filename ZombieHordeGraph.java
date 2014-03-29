@@ -112,10 +112,31 @@ public class ZombieHordeGraph {
 						}
 					}
 				} else if (startammo-p[source][dest][route]+routes[depth][dest]>a) {// maybe win?
+					// pick a "good" next step to estimate win.
+					int[] tW = pickDestinationAlg1(dest);
+					if (startammo-p[source][dest][route]+routes[depth][dest]-p[dest][tw[0]][tw[1]]+routes[depth+1][tw[0]]>a) {// next step still winning?
+						if (depth+1 < winwin) { // quicker win!
+							winwin=depth+1;
+							bestWinRoute=new int[depth+1][2];
+							for (int copy=0;copy<depth+1;copy++){
+								bestWinRoute[copy][0]=routes[copy][m];
+								bestWinRoute[copy][1]=routes[copy][m+1];
+							}
+						}
+					}
 				}else {
+					// no death or win, move to next depth
 					pickRoute(depth+1);
-					if (routevalue >= startammo && )
-						throw RuntimeException("solution_found");
+				}
+				// exit -- pop from stack TODO
+				routes[depth+1][0]=a-p[source][dest][route]+routes[depth][dest];
+				for (int cp=1;cp<m;cp++)
+					routes[depth+1][cp]=(dest==cp)?1:routes[depth][cp]+1;
+				routes[depth+1][m]=dest;
+				routes[depth+1][m+1]=route;
+				routes[depth+1][m+2]=routes[depth][m+2]+p[source][dest][route];
+				//	if (routevalue >= startammo && )
+				//		throw RuntimeException("solution_found");
 
 
 
