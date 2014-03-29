@@ -1,9 +1,10 @@
 import java.util.Scanner;
 public class ZombieHordeGraph {
-	int a=100,b,m,n,i,j,r,z,d,y,D,R,Z;
+	int a=100,b,m,n,i,j,r,z,d,y,D,R,Z,N;
 	float B,C,W,K;
 	int p[][][];
 	int o[];
+	Scanner in;
 	public static void main(String[]a){
 		(new ZombieHordeGraph()).game();
 	}
@@ -19,12 +20,12 @@ public class ZombieHordeGraph {
 	 * 1 < n <= 500
 	 */
 	ZombieHordeGraph() {
-		Scanner in = new Scanner(System.in);
+		in = new Scanner(System.in);
 		m = in.nextInt();
-		n = in.nextInt();
-		p = new int[m+1][m+1][n+1];
+		N = in.nextInt();
+		p = new int[m+1][m+1][N+1];
 		o = new int[m+1];
-		for (b=0;b<n;b++){
+		for (b=0;b<N;b++){
 			i = in.nextInt();
 			j = in.nextInt();
 			z = in.nextInt();
@@ -39,9 +40,9 @@ public class ZombieHordeGraph {
 		// start at 1.
 		D=1;z=0;
 		do{
-			System.out.printf("%d - ",D);
+			//System.out.printf("%d - ",D);
 			incOutposts();
-			int[]Q=pickDestinationAlg3(D);
+			int[]Q=pickDestinationInt(D);
 			Z=p[D][Q[0]][Q[1]];//#zombies on selected route
 			z+=(a>Z)?Z:a;//zombies killed
 			a=a+o[Q[0]]-Z;//ending ammunition
@@ -115,20 +116,26 @@ public class ZombieHordeGraph {
 	}
 
 	/**
-	 * Maximize ratio of ammunition gained over zombies killed in N steps.
+	 * Determine next route interactively.
 	 */
-	int[] pickDestinationAlg3(int s, int l, int L, float amg){
-		int n,y;n=y=0;float B,C;B=C=0f;
-		for(int d=1;d<m;d++){// Try every destination
-			for(int r=1;r<=p[s][d][0];r++){ // Try every route
-				C=(o[d]+3f+o[D])/(p[s][d][r]+p[d][D][R]);
-				if (C>B){
-				//	System.out.printf("  - %d %d : %d : %.0f : %5.2f\n",
-				//		d, r, p[s][d][r], o[d]+1f, C);
-					B=C;n=d;y=r;
+	int[] pickDestinationInt(int s){
+		int nc=0,nl=43,n,y;
+		for(int d=1;d<m;d++){
+			if (p[s][d][0]>0){
+				System.out.printf("%3d %3d:", d, o[d]);
+				for(int r=1;r<=p[s][d][0];r++){
+					System.out.printf(" %3d z%3d",r,p[s][d][r]);
 				}
+				System.out.println();
 			}
 		}
+		do{
+			System.out.print("d?");
+			n=in.nextInt();
+			System.out.print("r?");
+			y=in.nextInt();
+		}while(n<1||n>m||y<1||y>N||p[s][n][y]<1);
+
 		return new int[]{n,y};
 	}
 
