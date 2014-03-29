@@ -70,11 +70,11 @@ public class ZombieHordeGraph {
 		routes[0][m+2]=0; // zombies killed so far including # killed going to next outpost
 		winwin = Integer.MAX_VALUE;
 		pewpew=diedie=0;
-		try{
-			pickRoute(0);
-			System.out.println("No perfect cycle found, best cycle results in %d kills", pewpew);
-		}catch(RuntimeException re) {
-			System.out.println("Infinite Cycle found, perfect survival -- X");
+		pickRoute(0);
+		if(winwin<Integer.MAX_VALUE){
+			System.out.println("Infinite Cycle found, perfect survival -- %d steps", winwin);
+		}else{
+			System.out.println("No perfect cycle found, best cycle results in %d kills in %d steps", pewpew, diedie);
 		}
 	}
 
@@ -87,13 +87,13 @@ public class ZombieHordeGraph {
 	/**
 	 * Try to find a route that results in an loop where the ammo is greater than or equal to start
 	 */
-	int pickRoute(int depth){
+	void pickRoute(int depth){
 		int source = (depth<1)?1:routes[depth-1][m];
 		int startammo = (depth<1)?a:routes[depth-1][0];
 		for(int dest=1;dest<m;dest++){
 			for (int route=1;route<p[source][dest][0];route++){
 				//enter -- push to stack
-				routes[depth+1][0]=a-p[source][dest][route]+routes[depth][dest];
+				routes[depth+1][0]=startammo-p[source][dest][route]+routes[depth][dest];
 				for (int cp=1;cp<m;cp++)
 					routes[depth+1][cp]=(dest==cp)?1:routes[depth][cp]+1;
 				routes[depth+1][m]=dest;
@@ -112,9 +112,9 @@ public class ZombieHordeGraph {
 						}
 					}
 				} else if (startammo-p[source][dest][route]+routes[depth][dest]>a) {// maybe win?
-					// pick a "good" next step to estimate win.
-					int[] tW = pickDestinationAlg1(dest);
-					if (startammo-p[source][dest][route]+routes[depth][dest]-p[dest][tw[0]][tw[1]]+routes[depth+1][tw[0]]>a) {// next step still winning?
+					// TODO check next steps to see if we can return to an earlier step of loop with equal or greater ammo in inventory and ammo in outpost.
+					//int[] tW = pickDestinationAlg1(dest);
+					//if (startammo-p[source][dest][route]+routes[depth][dest]-p[dest][tw[0]][tw[1]]+routes[depth+1][tw[0]]>a) {// next step still winning?
 						if (depth+1 < winwin) { // quicker win!
 							winwin=depth+1;
 							bestWinRoute=new int[depth+1][2];
@@ -128,19 +128,11 @@ public class ZombieHordeGraph {
 					// no death or win, move to next depth
 					pickRoute(depth+1);
 				}
-				// exit -- pop from stack TODO
-				routes[depth+1][0]=a-p[source][dest][route]+routes[depth][dest];
-				for (int cp=1;cp<m;cp++)
-					routes[depth+1][cp]=(dest==cp)?1:routes[depth][cp]+1;
-				routes[depth+1][m]=dest;
-				routes[depth+1][m+1]=route;
-				routes[depth+1][m+2]=routes[depth][m+2]+p[source][dest][route];
-				//	if (routevalue >= startammo && )
-				//		throw RuntimeException("solution_found");
-
-
-
-		
+				// exit -- pop from stack
+				for (int cp=0;cp<m+3;cp++)
+					routes[depth+1][cp]=0;
+			}
+		}
 	}
 
 	/**
