@@ -58,6 +58,70 @@ public class ZombieHordeGraph {
 			o[b]++;
 	}
 
+
+	int[][] routes; //stack. stack pointer is passed to recursive frame.
+
+	void pickRoute(int start) {
+		routes = new int[5000][m+3];
+		routes[0][0]=a; // ammo before moving
+		System.arraycopy(o,1,routes[0],1,m-1); // ammo in outpost before moving
+		routes[0][m]=0; // outpost to go to next
+		routes[0][m+1]=0; // route to follow
+		routes[0][m+2]=0; // zombies killed so far including # killed going to next outpost
+		winwin = Integer.MAX_VALUE;
+		pewpew=diedie=0;
+		try{
+			pickRoute(0);
+			System.out.println("No perfect cycle found, best cycle results in %d kills", pewpew);
+		}catch(RuntimeException re) {
+			System.out.println("Infinite Cycle found, perfect survival -- X");
+		}
+	}
+
+	int pewpew; // best zombies killed route
+	int diedie; // best dead route length
+	int[][] bestDeadRoute;
+	int winwin; // win route length
+	int[][] bestWinRoute;
+
+	/**
+	 * Try to find a route that results in an loop where the ammo is greater than or equal to start
+	 */
+	int pickRoute(int depth){
+		int source = (depth<1)?1:routes[depth-1][m];
+		int startammo = (depth<1)?a:routes[depth-1][0];
+		for(int dest=1;dest<m;dest++){
+			for (int route=1;route<p[source][dest][0];route++){
+				//enter -- push to stack
+				routes[depth+1][0]=a-p[source][dest][route]+routes[depth][dest];
+				for (int cp=1;cp<m;cp++)
+					routes[depth+1][cp]=(dest==cp)?1:routes[depth][cp]+1;
+				routes[depth+1][m]=dest;
+				routes[depth+1][m+1]=route;
+				routes[depth+1][m+2]=routes[depth][m+2]+p[source][dest][route];
+				
+				// evaluate for win/lose
+				if (startammo-p[source][dest][route]<1){ // you die if you go here
+					if (pewpew<routes[depth][m+2]+startammo){ // new best death path
+						pewpew=routes[depth][m+2]+startammo;
+						diedie=depth+1;
+						bestDeadRoute=new int[depth+1][2];
+						for (int copy=0;copy<depth+1;copy++){
+							bestDeadRoute[copy][0]=routes[copy][m];
+							bestDeadRoute[copy][1]=routes[copy][m+1];
+						}
+					}
+				} else if (startammo-p[source][dest][route]+routes[depth][dest]>a) {// maybe win?
+				}else {
+					pickRoute(depth+1);
+					if (routevalue >= startammo && )
+						throw RuntimeException("solution_found");
+
+
+
+		
+	}
+
 	/**
 	 * Maximize ratio of ammunition gained over zombies killed in a single step.
 	 */
