@@ -7,7 +7,7 @@ Complex, cycle in ~25 moves
 2 5 10
 1 1 50
 
-Trivial win, cycle in 4 moves
+Trivial win, cycle in 3 moves
 4 6
 1 2 4
 2 3 4
