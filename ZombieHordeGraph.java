@@ -63,10 +63,11 @@ public class ZombieHordeGraph {
 
 	void pickRoute() {
 		System.out.println("Starting to pick a route!");
+		incOutposts(); // prep the outposts for our first move.
 		routes = new int[5000][m+3];
 		routes[0][0]=a; // ammo before moving
 		System.arraycopy(o,1,routes[0],1,m-1); // ammo in outpost before moving
-		routes[0][m]=0; // outpost to go to next
+		routes[0][m]=1; // outpost to go to next
 		routes[0][m+1]=0; // route to follow
 		routes[0][m+2]=0; // zombies killed so far including # killed going to next outpost
 		winwin = Integer.MAX_VALUE;
@@ -89,10 +90,18 @@ public class ZombieHordeGraph {
 			int k = pickRoute(0,mD);
 			if (winwin<Integer.MAX_VALUE){
 				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
+				for (int win=0; win<=winwin;win++){
+					System.out.printf(" %d:%d,%d-%d",win,bestWinRoute[win][0],bestWinRoute[win][1],bestWinRoute[win][2]);
+				}
+				System.out.println();
 				break;
 			}
 			if (k > 0) {
-				System.out.printf("All routes resolve to death. Best cycle: %d kills in %d steps\n", pewpew, diedie);
+				System.out.printf("All routes resolve to death. Best route: %d kills in %d steps\n", pewpew, diedie);
+				for (int die=0; die<=diedie;die++){
+					System.out.printf(" %d:%d,%d-%d",die,bestDeadRoute[die][0],bestDeadRoute[die][1],bestDeadRoute[die][2]);
+				}
+				System.out.println();
 				break;
 			}
 		}
@@ -131,42 +140,59 @@ public class ZombieHordeGraph {
 						System.out.printf("Found death path in %d moves", depth);
 						System.out.printf(" and it's a new best death path with %d kills", pewpew);
 						diedie=depth+1;
-						bestDeadRoute=new int[depth+1][2];
-						for (int copy=0;copy<depth+1;copy++){
+						bestDeadRoute=new int[depth+2][3];
+						for (int copy=0;copy<=depth+1;copy++){
 							bestDeadRoute[copy][0]=routes[copy][m];
 							bestDeadRoute[copy][1]=routes[copy][m+1];
+							bestDeadRoute[copy][2]=routes[copy][0];
 						}
 						System.out.println();
 					}
-				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=a) {// maybe win?
-					System.out.printf("Found potential win path in %d moves", depth);
+				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=startammo) {// maybe win?
+					System.out.printf("Found potential win path in %d moves: %d > %d", depth, startammo-p[source][dest][route]+routes[depth][dest],startammo);
 					int checkStartAmmo=startammo-p[source][dest][route]+routes[depth][dest];
 					int doneCheck=1;
+					int countChecks=0;
+					int[] dCheck = new int[m];
 					// Check each step to see if we can return to an earlier step of the route with equal or greater ammo in inventory and ammo in outpost.
 					for (int check=0;check<=depth&&doneCheck>0;check++){
-						int checkDest = (check<1)?1:routes[check][m]; // pick as "destination" each previously visited node in the route graph, in order.
-						for (int checkRoute=1;checkRoute<p[dest][checkDest][0]&&doneCheck>0;checkRoute++){ // check each route to this destination, if a route exists.
+						int checkDest = routes[check][m]; // pick as "destination" each previously visited node in the route graph, in order.
+						for (int checkRoute=1;checkRoute<=p[dest][checkDest][0]&&doneCheck>0&&dCheck[checkDest]<1;checkRoute++){ // check each route to this destination, if a route exists and we haven't checked this destination earlier.
+							countChecks++;
+							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0 ||
+								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo ||
+								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
+								System.out.printf("\n rd:%d de:%d rt:%d",check,checkDest,checkRoute);
+							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0)
+								System.out.print(" survived");
+							if (checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo)
+								System.out.print(" ammoup");
+							if (routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
+								System.out.print(" gainequiv");
 							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0 && // we can survive the trip
-								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=a && // we still have more than original ammo after
+								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo && // we still have more than original ammo after
 								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest])){ // and ammo gain to make same move is >= ammo gain the first time (meaning you re-enter the loop either in as good as a position as you were, or better).
-								System.out.print(" confirmed win");
+								System.out.printf(" confirmed win by going to %d using route %d", checkDest, checkRoute);
 								if (depth+1 < winwin) { // quicker win!
 									System.out.print(" and is new best win path!");
 									winwin=depth+1;
-									bestWinRoute=new int[depth+1][2];
-									for (int copy=0;copy<depth+1;copy++){
+									bestWinRoute=new int[depth+2][3];
+									for (int copy=0;copy<depth+2;copy++){
 										bestWinRoute[copy][0]=routes[copy][m];
 										bestWinRoute[copy][1]=routes[copy][m+1];
+										bestWinRoute[copy][2]=routes[copy][0];
 									}
+									return 0;
 									// We might be able to just RETURN here, as realistically the first win path will always be the best due to IDDF. TODO
 								} else {
 									System.out.print(" is not best win path.");
 								}
-								doneCheck++;
+								doneCheck--;
 							}
 						}
-						System.out.println();
+						dCheck[checkDest]++; // this destination is checked, don't try it again later (leads to false positives)
 					}
+					System.out.printf(" checked %d options\n", countChecks);
 					if (doneCheck>0) { // not a win :(.
 						//System.out.printf("Branching from depth %d\n", depth);
 						deathCount+=pickRoute(depth+1, maxDepth);
@@ -184,6 +210,7 @@ public class ZombieHordeGraph {
 
 		}
 		if (routesTested==deathCount) { // all the routes we tested resulted in death.
+			//System.out.printf("Should prune a branch at depth %d", depth);
 			return 1;
 		} else {
 			return 0;
