@@ -154,8 +154,36 @@ public class ZombieHordeGraph {
 					int doneCheck=1;
 					int countChecks=0;
 					int[] dCheck = new int[m];
-					// Check each step to see if we can return to an earlier step of the route with equal or greater ammo in inventory and ammo in outpost.
+					// Try to find a point in the current route that we can re-enter the route (a cycle)
 					for (int check=depth;check>=0&&doneCheck>0;check--){
+						if (routes[check][m]==dest){ // we can start back into the route from this identical point.
+							// prep top of the stack for a simple route follow.
+							int fDepth = depth + 1 - check;
+							for (int cM=0;cM<m+3;cM++) // copy prior stack frame forward to act as re-tread start
+								routes[depth+2][cM]=routes[depth+1][cM];
+							for (int followRoute = check+1;followRoute<=depth; followRoute++){
+								routes[depth+2][0]=routes[depth+2][0] // start with current ammo
+										-p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1] ] // subtract zombies on route taken
+										+routes[depth+2][ routes[followRoute][m] ]; // add in ammo gained on arrival
+								if (routes[depth+2][0]<routes[followRoute+1][m]) 
+									// if at any point in our retread we wind up with less any than we start with, game over man.
+									break;
+								// copy forward rest of stuff, deal with ammo.
+								for (int cp=1;cp<m;cp++)
+									routes[depth+2][cp]=(routes[followRoute][m]==cp)?1:routes[depth+2][cp]+1;
+								// don't need to track zombie kills, but whatever. Might as well.
+								routes[depth+2][m+2]=routes[depth+2][m+2]+p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1]];
+								routes[depth+2][m]=routes[followRoute][m];
+								routes[depth+2][m+1]=routes[followRoute][m+1];
+							}// TODO figure out success check condition, now that we've retraced route.
+							// notes: if we end the route early, we've failed the retrace.
+							// if we follow the entire route successfully, we've won, and found a loop that doesn't lose ammo.
+
+
+
+
+
+
 						int checkDest = routes[check][m]; // pick as "destination" each previously visited node in the route graph, in order.
 						if ( dCheck[checkDest]>0 ) // we already tried this loop state.
 							continue;
