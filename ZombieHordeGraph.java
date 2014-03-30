@@ -6,7 +6,7 @@ public class ZombieHordeGraph {
 	int o[];
 	Scanner in;
 	public static void main(String[]a){
-		(new ZombieHordeGraph()).game();
+		(new ZombieHordeGraph()).pickRoute();//game();
 	}
 	/**
 	 * Initially I will read the input from STDIN.
@@ -62,6 +62,7 @@ public class ZombieHordeGraph {
 	int[][] routes; //stack. stack pointer is passed to recursive frame.
 
 	void pickRoute() {
+		System.out.println("Starting to pick a route!");
 		routes = new int[5000][m+3];
 		routes[0][0]=a; // ammo before moving
 		System.arraycopy(o,1,routes[0],1,m-1); // ammo in outpost before moving
@@ -87,11 +88,11 @@ public class ZombieHordeGraph {
 			System.out.printf("Testing all routes of length %d\n", mD);
 			int k = pickRoute(0,mD);
 			if (winwin<Integer.MAX_VALUE){
-				System.out.println("Cycle found, perfect survival -- %d steps", winwin);
+				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
 				break;
 			}
 			if (k > 0) {
-				System.out.println("All routes resolve to death. Best cycle: %d kills in %d steps", pewpew, diedie);
+				System.out.printf("All routes resolve to death. Best cycle: %d kills in %d steps\n", pewpew, diedie);
 				break;
 			}
 		}
@@ -107,10 +108,12 @@ public class ZombieHordeGraph {
 
 		int routesTested = 0;
 		int deathCount = 0;
-		int source = (depth<1)?1:routes[depth-1][m];
-		int startammo = (depth<1)?a:routes[depth-1][0];
+		int source = (depth<1)?1:routes[depth][m];
+		int startammo = (depth<1)?a:routes[depth][0];
 		for(int dest=1;dest<m;dest++){
-			for (int route=1;route<p[source][dest][0];route++){
+			//System.out.printf("Looking at dest %d", dest);
+			for (int route=1;route<=p[source][dest][0];route++){
+				//System.out.printf(" and route %d\n", route);
 				//enter -- push to stack
 				routesTested++;
 				routes[depth+1][0]=startammo-p[source][dest][route]+routes[depth][dest];
@@ -122,10 +125,10 @@ public class ZombieHordeGraph {
 				
 				// evaluate for win/lose
 				if (startammo-p[source][dest][route]<1){ // you die if you go here
-					System.out.printf("Found death path in %d moves", depth);
 					deathCount++;
 					if (pewpew<routes[depth][m+2]+startammo){ // new best death path
 						pewpew=routes[depth][m+2]+startammo;
+						System.out.printf("Found death path in %d moves", depth);
 						System.out.printf(" and it's a new best death path with %d kills", pewpew);
 						diedie=depth+1;
 						bestDeadRoute=new int[depth+1][2];
@@ -133,19 +136,19 @@ public class ZombieHordeGraph {
 							bestDeadRoute[copy][0]=routes[copy][m];
 							bestDeadRoute[copy][1]=routes[copy][m+1];
 						}
+						System.out.println();
 					}
-					System.out.println();
 				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=a) {// maybe win?
 					System.out.printf("Found potential win path in %d moves", depth);
 					int checkStartAmmo=startammo-p[source][dest][route]+routes[depth][dest];
 					int doneCheck=1;
 					// Check each step to see if we can return to an earlier step of the route with equal or greater ammo in inventory and ammo in outpost.
 					for (int check=0;check<=depth&&doneCheck>0;check++){
-						int checkDest = (check<1)?1:routes[check-1][m]; // pick as "destination" each previously visited node in the route graph, in order.
+						int checkDest = (check<1)?1:routes[check][m]; // pick as "destination" each previously visited node in the route graph, in order.
 						for (int checkRoute=1;checkRoute<p[dest][checkDest][0]&&doneCheck>0;checkRoute++){ // check each route to this destination, if a route exists.
 							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0 && // we can survive the trip
 								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=a && // we still have more than original ammo after
-								routes[depth+1][checkDest]>=((check<1)?0;routes[check-1][checkDest])){ // and ammo gain to make same move is >= ammo gain the first time (meaning you re-enter the loop either in as good as a position as you were, or better).
+								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest])){ // and ammo gain to make same move is >= ammo gain the first time (meaning you re-enter the loop either in as good as a position as you were, or better).
 								System.out.print(" confirmed win");
 								if (depth+1 < winwin) { // quicker win!
 									System.out.print(" and is new best win path!");
@@ -165,9 +168,11 @@ public class ZombieHordeGraph {
 						System.out.println();
 					}
 					if (doneCheck>0) { // not a win :(.
+						//System.out.printf("Branching from depth %d\n", depth);
 						deathCount+=pickRoute(depth+1, maxDepth);
 					}
 				}else {
+					//System.out.printf("Branching from depth %d\n", depth);
 					// no death or win, move to next depth
 					deathCount+=pickRoute(depth+1, maxDepth);
 				}
@@ -175,6 +180,8 @@ public class ZombieHordeGraph {
 				for (int cp=0;cp<m+3;cp++)
 					routes[depth+1][cp]=0;
 			}
+			//System.out.println();
+
 		}
 		if (routesTested==deathCount) { // all the routes we tested resulted in death.
 			return 1;
