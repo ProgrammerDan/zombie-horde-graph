@@ -155,23 +155,25 @@ public class ZombieHordeGraph {
 					int countChecks=0;
 					int[] dCheck = new int[m];
 					// Check each step to see if we can return to an earlier step of the route with equal or greater ammo in inventory and ammo in outpost.
-					for (int check=0;check<=depth&&doneCheck>0;check++){
+					for (int check=depth;check>=0&&doneCheck>0;check--){
 						int checkDest = routes[check][m]; // pick as "destination" each previously visited node in the route graph, in order.
-						for (int checkRoute=1;checkRoute<=p[dest][checkDest][0]&&doneCheck>0&&dCheck[checkDest]<1;checkRoute++){ // check each route to this destination, if a route exists and we haven't checked this destination earlier.
+						if ( dCheck[checkDest]>0 ) // we already tried this loop state.
+							continue;
+						for (int checkRoute=1;checkRoute<=p[dest][checkDest][0]&&doneCheck>0;checkRoute++){ // check each route to this destination, if a route exists and we haven't checked this destination earlier.
 							countChecks++;
 							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0 ||
-								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo ||
-								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
+								checkStartAmmo-p[dest][checkDest][checkRoute]+depth-check+1>=startammo)//||
+//								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
 								System.out.printf("\n rd:%d de:%d rt:%d",check,checkDest,checkRoute);
 							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0)
 								System.out.print(" survived");
-							if (checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo)
+							if (checkStartAmmo-p[dest][checkDest][checkRoute]+depth-check+1>=startammo)
 								System.out.print(" ammoup");
-							if (routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
-								System.out.print(" gainequiv");
+//							if (routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest]))
+//								System.out.print(" gainequiv");
 							if (checkStartAmmo-p[dest][checkDest][checkRoute]>0 && // we can survive the trip
-								checkStartAmmo-p[dest][checkDest][checkRoute]+routes[depth+1][checkDest]>=startammo && // we still have more than original ammo after
-								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest])){ // and ammo gain to make same move is >= ammo gain the first time (meaning you re-enter the loop either in as good as a position as you were, or better).
+								checkStartAmmo-p[dest][checkDest][checkRoute]+depth-check+1>=startammo){// && // we still have more ammo assuming we follow route to this node again and again (homeostatic test)
+//								routes[depth+1][checkDest]>=((check<1)?0:routes[check][checkDest])){ // and ammo gain to make same move is >= ammo gain the first time (meaning you re-enter the loop either in as good a position as you were, or better).
 								System.out.printf(" confirmed win by going to %d using route %d", checkDest, checkRoute);
 								if (depth+1 < winwin) { // quicker win!
 									System.out.print(" and is new best win path!");
