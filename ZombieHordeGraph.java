@@ -94,7 +94,7 @@ public class ZombieHordeGraph {
 			totalProcessTime=System.currentTimeMillis();
 			totalRoutes=deadRoutes=winTestRoutes=0l;
 			int k = pickRoute(0,mD);
-			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms.",
+			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms.\n",
 					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime);
 			if (winwin<Integer.MAX_VALUE){
 				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
@@ -158,7 +158,7 @@ public class ZombieHordeGraph {
 						}
 						System.out.println();
 					}
-				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=startammo) {// maybe win?
+				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=startammo+p[source][dest][route]) {// maybe win?
 					winTestRoutes++;
 					//System.out.printf("Found potential win path in %d moves: %d > %d", depth, startammo-p[source][dest][route]+routes[depth][dest],startammo);
 					int checkStartAmmo=startammo-p[source][dest][route]+routes[depth][dest];
