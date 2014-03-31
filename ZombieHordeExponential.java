@@ -62,6 +62,9 @@ public class ZombieHordeExponential {
 	long winTestRoutes;
 	long totalProcessTime;
 	long leafCount;
+	long[] totalBranches;
+	long[] deadBranches;
+	long[] liveBranches;
 	int leaves[][][];
 	int maxLeaf;
 
@@ -73,9 +76,15 @@ public class ZombieHordeExponential {
 			System.out.printf("Testing all routes of length %d\n", mD);
 			totalProcessTime=System.currentTimeMillis();
 			totalRoutes=deadRoutes=winTestRoutes=leafCount=0l;
+			liveBranches=new long[mD];
+			deadBranches=new long[mD];
+			totalBranches=new long[mD];
 			int k = pickRoute(0,mD);
 			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms. Ended with %d leaves.\n",
 					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime, leafCount);
+			System.out.printf("dep: %10s %10s %10s\n","total","dead","live");
+			for(int qq=0;qq<mD;qq++)
+				System.out.printf("%3d: %10d %10d %10d\n",qq,totalBranches[qq],deadBranches[qq],liveBranches[qq]);
 			if (winwin<Integer.MAX_VALUE){
 				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
 				for (int win=0; win<=winwin;win++){
@@ -104,6 +113,8 @@ public class ZombieHordeExponential {
 			leafCount++; // let's start to estimate the feasibility of branch pruning by starting the next IDDF round only at the prior reachable leaf nodes.
 			return 0;
 		}
+
+		totalBranches[depth]++;
 
 		long depthTime=System.currentTimeMillis();
 
@@ -209,8 +220,12 @@ public class ZombieHordeExponential {
 				totalRoutes, deadRoutes, winTestRoutes, System.currentTimeMillis()-depthTime);
 		}
 		if (routesTested==deathCount) { // all the routes we tested resulted in death. TODO prune this for future IDDFs.
+			deadBranches[depth]++;
 			return 1;
 		} else {
+			if (deathCount==0){
+				liveBranches[depth]++;
+			}
 			return 0;
 		}
 	}
