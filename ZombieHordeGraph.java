@@ -6,7 +6,8 @@ public class ZombieHordeGraph {
 	int o[];
 	Scanner in;
 	public static void main(String[]a){
-		(new ZombieHordeGraph()).pickRoute();//game();
+		(new ZombieHordeGraph()).pickRoute();
+		//(new ZombieHordeGraph()).game();
 	}
 	/**
 	 * Initially I will read the input from STDIN.
@@ -84,6 +85,9 @@ public class ZombieHordeGraph {
 	long deadRoutes;
 	long winTestRoutes;
 	long totalProcessTime;
+	long leafCount;
+	int leaves[][][];
+	int maxLeaf;
 
 	/** 
 	 * IDDF approach to picking a route. Keep trying deeper depths until we find a solution.
@@ -92,10 +96,10 @@ public class ZombieHordeGraph {
 		for (int mD = 1; mD <= absoluteMaxDepth; mD++) {
 			System.out.printf("Testing all routes of length %d\n", mD);
 			totalProcessTime=System.currentTimeMillis();
-			totalRoutes=deadRoutes=winTestRoutes=0l;
+			totalRoutes=deadRoutes=winTestRoutes=leafCount=0l;
 			int k = pickRoute(0,mD);
-			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms.\n",
-					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime);
+			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms. Ended with %d leaves.\n",
+					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime, leafCount);
 			if (winwin<Integer.MAX_VALUE){
 				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
 				for (int win=0; win<=winwin;win++){
@@ -120,8 +124,10 @@ public class ZombieHordeGraph {
 	 * We will use an IDDF approach.
 	 */
 	int pickRoute(int depth, int maxDepth){
-		if (depth==maxDepth) // IDDF Cap.
+		if (depth==maxDepth) {// IDDF Cap.
+			leafCount++; // let's start to estimate the feasibility of branch pruning by starting the next IDDF round only at the prior reachable leaf nodes.
 			return 0;
+		}
 
 		long depthTime=System.currentTimeMillis();
 
