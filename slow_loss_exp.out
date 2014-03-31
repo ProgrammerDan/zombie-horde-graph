@@ -1,0 +1,674 @@
+INPUT:
+6 6
+1 2 25
+2 3 25
+3 4 25
+4 5 4
+5 6 4
+6 4 4
+
+OUTPUT:
+Starting to pick a route!
+Testing all routes of length 1
+Tested 1 routes, 0 of which lead to death, 0 led to momentary ammo increase, in 1 ms. Ended with 1 leaves.
+Testing all routes of length 2
+Tested 3 routes, 0 of which lead to death, 0 led to momentary ammo increase, in 0 ms. Ended with 2 leaves.
+Testing all routes of length 3
+Tested 6 routes, 0 of which lead to death, 0 led to momentary ammo increase, in 0 ms. Ended with 3 leaves.
+Testing all routes of length 4
+Tested 13 routes, 0 of which lead to death, 0 led to momentary ammo increase, in 0 ms. Ended with 7 leaves.
+Testing all routes of length 5
+Found death path in 4 moves and it's a new best death path with 107 kills
+Found death path in 4 moves and it's a new best death path with 109 kills
+Tested 25 routes, 8 of which lead to death, 0 led to momentary ammo increase, in 1 ms. Ended with 4 leaves.
+Testing all routes of length 6
+Tested 35 routes, 8 of which lead to death, 0 led to momentary ammo increase, in 0 ms. Ended with 10 leaves.
+Testing all routes of length 7
+Found death path in 6 moves and it's a new best death path with 116 kills
+Tested 57 routes, 12 of which lead to death, 0 led to momentary ammo increase, in 1 ms. Ended with 18 leaves.
+Testing all routes of length 8
+Found death path in 7 moves and it's a new best death path with 123 kills
+Tested 99 routes, 18 of which lead to death, 2 led to momentary ammo increase, in 0 ms. Ended with 36 leaves.
+Testing all routes of length 9
+Found death path in 8 moves and it's a new best death path with 126 kills
+Found death path in 8 moves and it's a new best death path with 127 kills
+Tested 181 routes, 26 of which lead to death, 4 led to momentary ammo increase, in 1 ms. Ended with 74 leaves.
+Testing all routes of length 10
+Found death path in 9 moves and it's a new best death path with 131 kills
+Tested 351 routes, 50 of which lead to death, 6 led to momentary ammo increase, in 0 ms. Ended with 146 leaves.
+Testing all routes of length 11
+Found death path in 10 moves and it's a new best death path with 134 kills
+Found death path in 10 moves and it's a new best death path with 135 kills
+Tested 685 routes, 96 of which lead to death, 10 led to momentary ammo increase, in 0 ms. Ended with 288 leaves.
+Testing all routes of length 12
+Found death path in 11 moves and it's a new best death path with 139 kills
+Tested 1347 routes, 204 of which lead to death, 18 led to momentary ammo increase, in 0 ms. Ended with 554 leaves.
+Testing all routes of length 13
+Found death path in 12 moves and it's a new best death path with 143 kills
+Tested 2625 routes, 458 of which lead to death, 34 led to momentary ammo increase, in 1 ms. Ended with 1024 leaves.
+Testing all routes of length 14
+Tested 5015 routes, 800 of which lead to death, 66 led to momentary ammo increase, in 0 ms. Ended with 2048 leaves.
+Testing all routes of length 15
+Tested 9793 routes, 1482 of which lead to death, 130 led to momentary ammo increase, in 1 ms. Ended with 4096 leaves.
+Testing all routes of length 16
+Found death path in 15 moves and it's a new best death path with 144 kills
+Found death path in 15 moves and it's a new best death path with 145 kills
+Tested 19351 routes, 2848 of which lead to death, 258 led to momentary ammo increase, in 3 ms. Ended with 8192 leaves.
+Testing all routes of length 17
+Found death path in 16 moves and it's a new best death path with 148 kills
+Tested 38465 routes, 5578 of which lead to death, 514 led to momentary ammo increase, in 5 ms. Ended with 16384 leaves.
+Testing all routes of length 18
+Found death path in 17 moves and it's a new best death path with 150 kills
+Found death path in 17 moves and it's a new best death path with 151 kills
+Tested 76695 routes, 11040 of which lead to death, 1026 led to momentary ammo increase, in 9 ms. Ended with 32768 leaves.
+Testing all routes of length 19
+Found death path in 18 moves and it's a new best death path with 154 kills
+Tested 153153 routes, 21966 of which lead to death, 2048 led to momentary ammo increase, in 25 ms. Ended with 65532 leaves.
+Testing all routes of length 20
+Found death path in 19 moves and it's a new best death path with 156 kills
+Found death path in 19 moves and it's a new best death path with 157 kills
+Tested 306061 routes, 43814 of which lead to death, 4092 led to momentary ammo increase, in 41 ms. Ended with 131060 leaves.
+Testing all routes of length 21
+Found death path in 20 moves and it's a new best death path with 160 kills
+Tested 611867 routes, 87524 of which lead to death, 8172 led to momentary ammo increase, in 81 ms. Ended with 262096 leaves.
+Testing all routes of length 22
+Found death path in 21 moves and it's a new best death path with 162 kills
+Found death path in 21 moves and it's a new best death path with 163 kills
+Tested 1223425 routes, 174986 of which lead to death, 16300 led to momentary ammo increase, in 173 ms. Ended with 524096 leaves.
+Testing all routes of length 23
+Found death path in 22 moves and it's a new best death path with 166 kills
+Tested 2446315 routes, 350068 of which lead to death, 32428 led to momentary ammo increase, in 317 ms. Ended with 1047808 leaves.
+Testing all routes of length 24
+Found death path in 23 moves and it's a new best death path with 168 kills
+Found death path in 23 moves and it's a new best death path with 169 kills
+Tested 4891201 routes, 700874 of which lead to death, 64172 led to momentary ammo increase, in 651 ms. Ended with 2094080 leaves.
+Testing all routes of length 25
+Found death path in 24 moves and it's a new best death path with 172 kills
+Tested 9777387 routes, 1405044 of which lead to death, 125610 led to momentary ammo increase, in 1306 ms. Ended with 4182016 leaves.
+Testing all routes of length 26
+Found death path in 25 moves and it's a new best death path with 174 kills
+Found death path in 25 moves and it's a new best death path with 175 kills
+1-1,2-1,3-1,4..so far 19535425 routes, 2823626 deadends, 240290 win tests - 2690 ms
+1-1,2-1,3..so far 19535425 routes, 2823626 deadends, 240290 win tests - 2690 ms
+1-1,2..so far 19535425 routes, 2823626 deadends, 240290 win tests - 2691 ms
+1..so far 19535425 routes, 2823626 deadends, 240290 win tests - 2691 ms
+Tested 19535425 routes, 2823626 of which lead to death, 240290 led to momentary ammo increase, in 2691 ms. Ended with 8339456 leaves.
+Testing all routes of length 27
+Found death path in 26 moves and it's a new best death path with 178 kills
+1-1,2-1,3-1,4-1,5..so far 19497087 routes, 2850876 deadends, 218434 win tests - 2565 ms
+1-1,2-1,3-1,4-1,6..so far 38994155 routes, 5701744 deadends, 436868 win tests - 2607 ms
+1-1,2-1,3-1,4..so far 38994155 routes, 5701744 deadends, 436868 win tests - 5173 ms
+1-1,2-1,3..so far 38994155 routes, 5701744 deadends, 436868 win tests - 5173 ms
+1-1,2..so far 38994155 routes, 5701744 deadends, 436868 win tests - 5173 ms
+1..so far 38994155 routes, 5701744 deadends, 436868 win tests - 5174 ms
+Tested 38994155 routes, 5701744 of which lead to death, 436868 led to momentary ammo increase, in 5174 ms. Ended with 16580612 leaves.
+Testing all routes of length 28
+Found death path in 27 moves and it's a new best death path with 180 kills
+Found death path in 27 moves and it's a new best death path with 181 kills
+1-1,2-1,3-1,4-1,5-1,4..so far 19419979 routes, 2905358 deadends, 174725 win tests - 2451 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 38841135 routes, 5810890 deadends, 349458 win tests - 2470 ms
+1-1,2-1,3-1,4-1,5..so far 38841135 routes, 5810890 deadends, 349458 win tests - 4922 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 58261095 routes, 8716240 deadends, 524183 win tests - 2531 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 77682251 routes, 11621772 deadends, 698916 win tests - 2507 ms
+1-1,2-1,3-1,4-1,6..so far 77682251 routes, 11621772 deadends, 698916 win tests - 5038 ms
+1-1,2-1,3-1,4..so far 77682251 routes, 11621772 deadends, 698916 win tests - 9961 ms
+1-1,2-1,3..so far 77682251 routes, 11621772 deadends, 698916 win tests - 9961 ms
+1-1,2..so far 77682251 routes, 11621772 deadends, 698916 win tests - 9961 ms
+1..so far 77682251 routes, 11621772 deadends, 698916 win tests - 9962 ms
+Tested 77682251 routes, 11621772 of which lead to death, 698916 led to momentary ammo increase, in 9962 ms. Ended with 32768068 leaves.
+Testing all routes of length 29
+Found death path in 28 moves and it's a new best death path with 184 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 19265287 routes, 3014182 deadends, 87356 win tests - 2339 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 38534099 routes, 6028910 deadends, 174725 win tests - 2371 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 38534099 routes, 6028910 deadends, 174725 win tests - 4711 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 57802918 routes, 9043642 deadends, 262094 win tests - 2382 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 77070547 routes, 12058186 deadends, 349458 win tests - 2382 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 77070547 routes, 12058186 deadends, 349458 win tests - 4764 ms
+1-1,2-1,3-1,4-1,5..so far 77070547 routes, 12058186 deadends, 349458 win tests - 9476 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 96339364 routes, 15072916 deadends, 436827 win tests - 2466 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 115604627 routes, 18087088 deadends, 524183 win tests - 2448 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 115604627 routes, 18087088 deadends, 524183 win tests - 4914 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 134873446 routes, 21101820 deadends, 611552 win tests - 2392 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 154141075 routes, 24116364 deadends, 698916 win tests - 2353 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 154141075 routes, 24116364 deadends, 698916 win tests - 4751 ms
+1-1,2-1,3-1,4-1,6..so far 154141075 routes, 24116364 deadends, 698916 win tests - 9667 ms
+1-1,2-1,3-1,4..so far 154141075 routes, 24116364 deadends, 698916 win tests - 19144 ms
+1-1,2-1,3..so far 154141075 routes, 24116364 deadends, 698916 win tests - 19148 ms
+1-1,2..so far 154141075 routes, 24116364 deadends, 698916 win tests - 19148 ms
+1..so far 154141075 routes, 24116364 deadends, 698916 win tests - 19148 ms
+Tested 154141075 routes, 24116364 of which lead to death, 698916 led to momentary ammo increase, in 19149 ms. Ended with 63964232 leaves.
+Testing all routes of length 30
+Found death path in 29 moves and it's a new best death path with 187 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4..so far 18956136 routes, 3231133 deadends, 43672 win tests - 2404 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6..so far 37919233 routes, 6463448 deadends, 87356 win tests - 2416 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 37919233 routes, 6463448 deadends, 87356 win tests - 4820 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4..so far 56882328 routes, 9695761 deadends, 131041 win tests - 2443 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 75845425 routes, 12928076 deadends, 174725 win tests - 4417 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 75845425 routes, 12928076 deadends, 174725 win tests - 9238 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5..so far 94808527 routes, 16160393 deadends, 218409 win tests - 2196 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 113771624 routes, 19392708 deadends, 262094 win tests - 4114 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 151695485 routes, 25856940 deadends, 349458 win tests - 3826 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 151695485 routes, 25856940 deadends, 349458 win tests - 7941 ms
+1-1,2-1,3-1,4-1,5..so far 151695485 routes, 25856940 deadends, 349458 win tests - 17179 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 189621682 routes, 32321570 deadends, 436827 win tests - 3903 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 227540891 routes, 38785008 deadends, 524183 win tests - 3824 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 227540891 routes, 38785008 deadends, 524183 win tests - 7727 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 265467090 routes, 45249640 deadends, 611552 win tests - 3888 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 303390951 routes, 51713872 deadends, 698916 win tests - 3836 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 303390951 routes, 51713872 deadends, 698916 win tests - 7724 ms
+1-1,2-1,3-1,4-1,6..so far 303390951 routes, 51713872 deadends, 698916 win tests - 15452 ms
+1-1,2-1,3-1,4..so far 303390951 routes, 51713872 deadends, 698916 win tests - 32631 ms
+1-1,2-1,3..so far 303390951 routes, 51713872 deadends, 698916 win tests - 32631 ms
+1-1,2..so far 303390951 routes, 51713872 deadends, 698916 win tests - 32631 ms
+1..so far 303390951 routes, 51713872 deadends, 698916 win tests - 32631 ms
+Tested 303390951 routes, 51713872 of which lead to death, 698916 led to momentary ammo increase, in 32632 ms. Ended with 121652368 leaves.
+Testing all routes of length 31
+Found death path in 30 moves and it's a new best death path with 189 kills
+Found death path in 30 moves and it's a new best death path with 190 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5..so far 18337957 routes, 3659334 deadends, 21828 win tests - 2018 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4..so far 36691663 routes, 7321806 deadends, 43672 win tests - 3948 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6..so far 73396819 routes, 14646300 deadends, 87356 win tests - 3864 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 73396819 routes, 14646300 deadends, 87356 win tests - 7813 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4..so far 110101975 routes, 21970794 deadends, 131041 win tests - 3770 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5..so far 146807131 routes, 29295288 deadends, 174725 win tests - 3847 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 146807131 routes, 29295288 deadends, 174725 win tests - 7618 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 146807131 routes, 29295288 deadends, 174725 win tests - 15433 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5..so far 183512293 routes, 36619785 deadends, 218409 win tests - 3809 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6..so far 220217450 routes, 43944280 deadends, 262094 win tests - 3791 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 220217450 routes, 43944280 deadends, 262094 win tests - 7600 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4..so far 256922608 routes, 51268775 deadends, 305778 win tests - 3740 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6..so far 293623247 routes, 58592368 deadends, 349458 win tests - 3770 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 293623247 routes, 58592368 deadends, 349458 win tests - 7511 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 293623247 routes, 58592368 deadends, 349458 win tests - 15111 ms
+1-1,2-1,3-1,4-1,5..so far 293623247 routes, 58592368 deadends, 349458 win tests - 30544 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4..so far 330328408 routes, 65916864 deadends, 393143 win tests - 3800 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6..so far 367033564 routes, 73241358 deadends, 436827 win tests - 3751 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 367033564 routes, 73241358 deadends, 436827 win tests - 7551 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4..so far 403725203 routes, 80563154 deadends, 480499 win tests - 3830 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5..so far 440430359 routes, 87887648 deadends, 524183 win tests - 3809 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 440430359 routes, 87887648 deadends, 524183 win tests - 7640 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 440430359 routes, 87887648 deadends, 524183 win tests - 15191 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5..so far 477135521 routes, 95212145 deadends, 567868 win tests - 3895 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5..so far 513840678 routes, 102536640 deadends, 611552 win tests - 2071 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6..so far 513840678 routes, 102536640 deadends, 611552 win tests - 3952 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 513840678 routes, 102536640 deadends, 611552 win tests - 7848 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4..so far 550545836 routes, 109861135 deadends, 655236 win tests - 3810 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5..so far 587246475 routes, 117184728 deadends, 698916 win tests - 3798 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 587246475 routes, 117184728 deadends, 698916 win tests - 7608 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 587246475 routes, 117184728 deadends, 698916 win tests - 15457 ms
+1-1,2-1,3-1,4-1,6..so far 587246475 routes, 117184728 deadends, 698916 win tests - 30648 ms
+1-1,2-1,3-1,4..so far 587246475 routes, 117184728 deadends, 698916 win tests - 61192 ms
+1-1,2-1,3..so far 587246475 routes, 117184728 deadends, 698916 win tests - 61192 ms
+1-1,2..so far 587246475 routes, 117184728 deadends, 698916 win tests - 61193 ms
+1..so far 587246475 routes, 117184728 deadends, 698916 win tests - 61193 ms
+Tested 587246475 routes, 117184728 of which lead to death, 698916 led to momentary ammo increase, in 61193 ms. Ended with 218384668 leaves.
+Testing all routes of length 32
+Found death path in 31 moves and it's a new best death path with 191 kills
+Found death path in 31 moves and it's a new best death path with 193 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5..so far 34250109 routes, 8953156 deadends, 21828 win tests - 3468 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6..so far 68529655 routes, 17914004 deadends, 43672 win tests - 3521 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4..so far 68529655 routes, 17914004 deadends, 43672 win tests - 6989 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4..so far 102809204 routes, 26874853 deadends, 65515 win tests - 3486 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5..so far 137084532 routes, 35834599 deadends, 87356 win tests - 3488 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6..so far 137084532 routes, 35834599 deadends, 87356 win tests - 6974 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 137084532 routes, 35834599 deadends, 87356 win tests - 13963 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5..so far 171364083 routes, 44795449 deadends, 109199 win tests - 3518 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6..so far 205639407 routes, 53755192 deadends, 131041 win tests - 3438 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4..so far 205639407 routes, 53755192 deadends, 131041 win tests - 6956 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4..so far 239918956 routes, 62716041 deadends, 152884 win tests - 3467 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6..so far 274194284 routes, 71675787 deadends, 174725 win tests - 3451 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5..so far 274194284 routes, 71675787 deadends, 174725 win tests - 6919 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 274194284 routes, 71675787 deadends, 174725 win tests - 13875 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 274194284 routes, 71675787 deadends, 174725 win tests - 27838 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4..so far 308469620 routes, 80635536 deadends, 196566 win tests - 3689 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,4..so far 325609394 routes, 85115961 deadends, 207487 win tests - 2273 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,5..so far 342749166 routes, 89596384 deadends, 218409 win tests - 2015 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6..so far 342749166 routes, 89596384 deadends, 218409 win tests - 4288 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5..so far 342749166 routes, 89596384 deadends, 218409 win tests - 7978 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4..so far 377024497 routes, 98556131 deadends, 240251 win tests - 3781 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5..so far 411304043 routes, 107516979 deadends, 262094 win tests - 3448 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6..so far 411304043 routes, 107516979 deadends, 262094 win tests - 7229 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 411304043 routes, 107516979 deadends, 262094 win tests - 15207 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5..so far 445579374 routes, 116476725 deadends, 283935 win tests - 3767 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,4..so far 462719148 routes, 120957150 deadends, 294857 win tests - 2531 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6..so far 479858920 routes, 125437573 deadends, 305778 win tests - 4281 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4..so far 479858920 routes, 125437573 deadends, 305778 win tests - 8048 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4..so far 514138469 routes, 134398422 deadends, 327621 win tests - 3627 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5..so far 548405360 routes, 143355963 deadends, 349458 win tests - 3791 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6..so far 548405360 routes, 143355963 deadends, 349458 win tests - 7418 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 548405360 routes, 143355963 deadends, 349458 win tests - 15467 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 548405360 routes, 143355963 deadends, 349458 win tests - 30674 ms
+1-1,2-1,3-1,4-1,5..so far 548405360 routes, 143355963 deadends, 349458 win tests - 58512 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5..so far 582680694 routes, 152315710 deadends, 371300 win tests - 3616 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6..so far 616960240 routes, 161276558 deadends, 393143 win tests - 3573 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4..so far 616960240 routes, 161276558 deadends, 393143 win tests - 7189 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4..so far 651239789 routes, 170237407 deadends, 414986 win tests - 3507 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5..so far 685515117 routes, 179197153 deadends, 436827 win tests - 3459 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6..so far 685515117 routes, 179197153 deadends, 436827 win tests - 6966 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 685515117 routes, 179197153 deadends, 436827 win tests - 14155 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5..so far 719794666 routes, 188158002 deadends, 458671 win tests - 3544 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6..so far 754044748 routes, 197111147 deadends, 480499 win tests - 3585 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4..so far 754044748 routes, 197111147 deadends, 480499 win tests - 7130 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4..so far 788324297 routes, 206071996 deadends, 502342 win tests - 3563 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6..so far 822599625 routes, 215031742 deadends, 524183 win tests - 3578 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5..so far 822599625 routes, 215031742 deadends, 524183 win tests - 7141 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 822599625 routes, 215031742 deadends, 524183 win tests - 14271 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 822599625 routes, 215031742 deadends, 524183 win tests - 28426 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4..so far 856874961 routes, 223991491 deadends, 546025 win tests - 3546 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6..so far 891154507 routes, 232952339 deadends, 567868 win tests - 3513 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5..so far 891154507 routes, 232952339 deadends, 567868 win tests - 7059 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4..so far 925429838 routes, 241912086 deadends, 589709 win tests - 3463 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5..so far 959709384 routes, 250872934 deadends, 611552 win tests - 3505 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6..so far 959709384 routes, 250872934 deadends, 611552 win tests - 6968 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 959709384 routes, 250872934 deadends, 611552 win tests - 14028 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5..so far 993988935 routes, 259833784 deadends, 633395 win tests - 3505 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6..so far 1028264261 routes, 268793528 deadends, 655236 win tests - 3438 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4..so far 1028264261 routes, 268793528 deadends, 655236 win tests - 6943 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4..so far 1062543810 routes, 277754377 deadends, 677079 win tests - 3433 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 3470 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 6904 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 13847 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 27876 ms
+1-1,2-1,3-1,4-1,6..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 56302 ms
+1-1,2-1,3-1,4..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 114814 ms
+1-1,2-1,3..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 114814 ms
+1-1,2..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 114814 ms
+1..so far 1096810701 routes, 286711918 deadends, 698916 win tests - 114814 ms
+Tested 1096810701 routes, 286711918 of which lead to death, 698916 led to momentary ammo increase, in 114814 ms. Ended with 340037036 leaves.
+Testing all routes of length 33
+Found death path in 32 moves and it's a new best death path with 195 kills
+Found death path in 32 moves and it's a new best death path with 196 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,4..so far 29487732 routes, 11545530 deadends, 10906 win tests - 2967 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,6..so far 59026212 routes, 23110929 deadends, 21828 win tests - 2962 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5..so far 59026212 routes, 23110929 deadends, 21828 win tests - 5929 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,4..so far 88564694 routes, 34676330 deadends, 32751 win tests - 2974 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,5..so far 118103174 routes, 46241729 deadends, 43672 win tests - 2987 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6..so far 118103174 routes, 46241729 deadends, 43672 win tests - 5961 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4..so far 118103174 routes, 46241729 deadends, 43672 win tests - 11891 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,5..so far 147641660 routes, 57807131 deadends, 54593 win tests - 2984 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,6..so far 177180139 routes, 69372530 deadends, 65515 win tests - 2987 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4..so far 177180139 routes, 69372530 deadends, 65515 win tests - 5971 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,4..so far 206718621 routes, 80937931 deadends, 76436 win tests - 2973 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,6..so far 236249831 routes, 92500484 deadends, 87356 win tests - 2971 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5..so far 236249831 routes, 92500484 deadends, 87356 win tests - 5944 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6..so far 236249831 routes, 92500484 deadends, 87356 win tests - 11915 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 236249831 routes, 92500484 deadends, 87356 win tests - 23807 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,4..so far 265788318 routes, 104065887 deadends, 98278 win tests - 2967 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,6..so far 295326798 routes, 115631286 deadends, 109199 win tests - 2973 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5..so far 295326798 routes, 115631286 deadends, 109199 win tests - 5940 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,4..so far 324858006 routes, 127193838 deadends, 120120 win tests - 2966 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,5..so far 354396486 routes, 138759237 deadends, 131041 win tests - 2985 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6..so far 354396486 routes, 138759237 deadends, 131041 win tests - 5951 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4..so far 354396486 routes, 138759237 deadends, 131041 win tests - 11891 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,5..so far 383934970 routes, 150324638 deadends, 141963 win tests - 2986 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,6..so far 413473451 routes, 161890038 deadends, 152884 win tests - 3004 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4..so far 413473451 routes, 161890038 deadends, 152884 win tests - 5990 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,4..so far 443011933 routes, 173455439 deadends, 163805 win tests - 3064 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,5..so far 472543143 routes, 185017992 deadends, 174725 win tests - 3062 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6..so far 472543143 routes, 185017992 deadends, 174725 win tests - 6126 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5..so far 472543143 routes, 185017992 deadends, 174725 win tests - 12116 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 472543143 routes, 185017992 deadends, 174725 win tests - 24008 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 472543143 routes, 185017992 deadends, 174725 win tests - 47815 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,5..so far 502074362 routes, 196580549 deadends, 185645 win tests - 3064 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,6..so far 531612843 routes, 208145949 deadends, 196566 win tests - 3091 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4..so far 531612843 routes, 208145949 deadends, 196566 win tests - 6156 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,4..so far 561151325 routes, 219711350 deadends, 207487 win tests - 3036 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,5..so far 590689805 routes, 231276749 deadends, 218409 win tests - 3090 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6..so far 590689805 routes, 231276749 deadends, 218409 win tests - 6127 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5..so far 590689805 routes, 231276749 deadends, 218409 win tests - 12283 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,5..so far 620228291 routes, 242842151 deadends, 229330 win tests - 3045 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,6..so far 649759500 routes, 254404704 deadends, 240251 win tests - 2980 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4..so far 649759500 routes, 254404704 deadends, 240251 win tests - 6025 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,4..so far 679297982 routes, 265970105 deadends, 251172 win tests - 3048 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,6..so far 708836462 routes, 277535504 deadends, 262094 win tests - 3130 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5..so far 708836462 routes, 277535504 deadends, 262094 win tests - 6178 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6..so far 708836462 routes, 277535504 deadends, 262094 win tests - 12203 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 708836462 routes, 277535504 deadends, 262094 win tests - 24487 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,4..so far 738367677 routes, 289098059 deadends, 273014 win tests - 3104 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,6..so far 767906157 routes, 300663458 deadends, 283935 win tests - 3076 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5..so far 767906157 routes, 300663458 deadends, 283935 win tests - 6180 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,4..so far 797444639 routes, 312228859 deadends, 294857 win tests - 3066 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,5..so far 826983119 routes, 323794258 deadends, 305778 win tests - 3023 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6..so far 826983119 routes, 323794258 deadends, 305778 win tests - 6089 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4..so far 826983119 routes, 323794258 deadends, 305778 win tests - 12270 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,5..so far 856521605 routes, 335359660 deadends, 316699 win tests - 3033 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,6..so far 886060084 routes, 346925059 deadends, 327621 win tests - 3076 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4..so far 886060084 routes, 346925059 deadends, 327621 win tests - 6109 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,4..so far 915598566 routes, 358490460 deadends, 338542 win tests - 2985 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,6..so far 945115235 routes, 370047320 deadends, 349458 win tests - 2963 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5..so far 945115235 routes, 370047320 deadends, 349458 win tests - 5948 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6..so far 945115235 routes, 370047320 deadends, 349458 win tests - 12057 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 945115235 routes, 370047320 deadends, 349458 win tests - 24327 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 945115235 routes, 370047320 deadends, 349458 win tests - 48815 ms
+1-1,2-1,3-1,4-1,5..so far 945115235 routes, 370047320 deadends, 349458 win tests - 96630 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,4..so far 974646453 routes, 381609876 deadends, 360379 win tests - 3039 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,6..so far 1004184933 routes, 393175275 deadends, 371300 win tests - 3044 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5..so far 1004184933 routes, 393175275 deadends, 371300 win tests - 6083 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,4..so far 1033723415 routes, 404740676 deadends, 382222 win tests - 3059 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,5..so far 1063261895 routes, 416306075 deadends, 393143 win tests - 2990 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6..so far 1063261895 routes, 416306075 deadends, 393143 win tests - 6049 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4..so far 1063261895 routes, 416306075 deadends, 393143 win tests - 12132 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,5..so far 1092800381 routes, 427871477 deadends, 404064 win tests - 3009 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,6..so far 1122338860 routes, 439436876 deadends, 414986 win tests - 2969 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4..so far 1122338860 routes, 439436876 deadends, 414986 win tests - 5978 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,4..so far 1151877342 routes, 451002277 deadends, 425907 win tests - 2970 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,6..so far 1181408552 routes, 462564830 deadends, 436827 win tests - 2994 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5..so far 1181408552 routes, 462564830 deadends, 436827 win tests - 5965 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6..so far 1181408552 routes, 462564830 deadends, 436827 win tests - 11943 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 1181408552 routes, 462564830 deadends, 436827 win tests - 24075 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,4..so far 1210947037 routes, 474130232 deadends, 447750 win tests - 2971 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,6..so far 1240485517 routes, 485695631 deadends, 458671 win tests - 2967 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5..so far 1240485517 routes, 485695631 deadends, 458671 win tests - 5938 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,4..so far 1269973222 routes, 497241150 deadends, 469577 win tests - 2965 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,5..so far 1299511702 routes, 508806549 deadends, 480499 win tests - 2965 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6..so far 1299511702 routes, 508806549 deadends, 480499 win tests - 5930 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4..so far 1299511702 routes, 508806549 deadends, 480499 win tests - 11868 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,5..so far 1329050186 routes, 520371950 deadends, 491421 win tests - 2967 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,6..so far 1358588667 routes, 531937350 deadends, 502342 win tests - 2966 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4..so far 1358588667 routes, 531937350 deadends, 502342 win tests - 5933 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,4..so far 1388127149 routes, 543502751 deadends, 513263 win tests - 2970 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,5..so far 1417658359 routes, 555065304 deadends, 524183 win tests - 2969 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6..so far 1417658359 routes, 555065304 deadends, 524183 win tests - 5939 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5..so far 1417658359 routes, 555065304 deadends, 524183 win tests - 11872 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 1417658359 routes, 555065304 deadends, 524183 win tests - 23740 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 1417658359 routes, 555065304 deadends, 524183 win tests - 47815 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,5..so far 1447189578 routes, 566627861 deadends, 535104 win tests - 3016 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,6..so far 1476728059 routes, 578193261 deadends, 546025 win tests - 2969 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4..so far 1476728059 routes, 578193261 deadends, 546025 win tests - 5985 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,4..so far 1506266541 routes, 589758662 deadends, 556946 win tests - 2979 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,5..so far 1535805021 routes, 601324061 deadends, 567868 win tests - 2986 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6..so far 1535805021 routes, 601324061 deadends, 567868 win tests - 5965 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5..so far 1535805021 routes, 601324061 deadends, 567868 win tests - 11951 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,5..so far 1565343507 routes, 612889463 deadends, 578789 win tests - 2989 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,6..so far 1594874716 routes, 624452016 deadends, 589709 win tests - 2980 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4..so far 1594874716 routes, 624452016 deadends, 589709 win tests - 5970 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,4..so far 1624413198 routes, 636017417 deadends, 600630 win tests - 2973 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,6..so far 1653951678 routes, 647582816 deadends, 611552 win tests - 3114 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5..so far 1653951678 routes, 647582816 deadends, 611552 win tests - 6087 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6..so far 1653951678 routes, 647582816 deadends, 611552 win tests - 12057 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 1653951678 routes, 647582816 deadends, 611552 win tests - 24008 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,4..so far 1683490165 routes, 659148219 deadends, 622474 win tests - 3067 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,6..so far 1713028645 routes, 670713618 deadends, 633395 win tests - 3096 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5..so far 1713028645 routes, 670713618 deadends, 633395 win tests - 6163 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,4..so far 1742559855 routes, 682276171 deadends, 644315 win tests - 3114 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,5..so far 1772098335 routes, 693841570 deadends, 655236 win tests - 3040 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6..so far 1772098335 routes, 693841570 deadends, 655236 win tests - 6154 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4..so far 1772098335 routes, 693841570 deadends, 655236 win tests - 12317 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,5..so far 1801636819 routes, 705406971 deadends, 666158 win tests - 3032 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,6..so far 1831175300 routes, 716972371 deadends, 677079 win tests - 3052 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4..so far 1831175300 routes, 716972371 deadends, 677079 win tests - 6084 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,4..so far 1860713782 routes, 728537772 deadends, 688000 win tests - 3008 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,5..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 3059 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 6067 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 12152 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 24469 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 48477 ms
+1-1,2-1,3-1,4-1,6..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 96293 ms
+1-1,2-1,3-1,4..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 192923 ms
+1-1,2-1,3..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 192923 ms
+1-1,2..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 192923 ms
+1..so far 1890230451 routes, 740094632 deadends, 698916 win tests - 192923 ms
+Tested 1890230451 routes, 740094632 of which lead to death, 698916 led to momentary ammo increase, in 192923 ms. Ended with 340037036 leaves.
+Testing all routes of length 34
+Found death path in 33 moves and it's a new best death path with 199 kills
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,4-1,5..so far 20893932 routes, 11939385 deadends, 5444 win tests - 2131 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,4-1,6..so far 41865128 routes, 23922926 deadends, 10906 win tests - 2152 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,4..so far 41865128 routes, 23922926 deadends, 10906 win tests - 4283 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,6-1,4..so far 62836327 routes, 35906468 deadends, 16368 win tests - 2111 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,6-1,5..so far 83802316 routes, 47887033 deadends, 21828 win tests - 2101 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5-1,6..so far 83802316 routes, 47887033 deadends, 21828 win tests - 4213 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,5..so far 83802316 routes, 47887033 deadends, 21828 win tests - 8496 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,4-1,5..so far 104773517 routes, 59870576 deadends, 27290 win tests - 2116 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,4-1,6..so far 125739506 routes, 71851142 deadends, 32751 win tests - 2149 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,4..so far 125739506 routes, 71851142 deadends, 32751 win tests - 4265 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,5-1,4..so far 146710705 routes, 83834684 deadends, 38212 win tests - 2127 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,5-1,6..so far 167676694 routes, 95815249 deadends, 43672 win tests - 2152 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6-1,5..so far 167676694 routes, 95815249 deadends, 43672 win tests - 4280 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4-1,6..so far 167676694 routes, 95815249 deadends, 43672 win tests - 8546 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,4..so far 167676694 routes, 95815249 deadends, 43672 win tests - 17042 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,5-1,4..so far 188642690 routes, 107795817 deadends, 49132 win tests - 2151 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,5-1,6..so far 209613888 routes, 119779359 deadends, 54593 win tests - 2130 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,5..so far 209613888 routes, 119779359 deadends, 54593 win tests - 4281 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,6-1,4..so far 230579877 routes, 131759924 deadends, 60054 win tests - 2051 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,6-1,5..so far 251551075 routes, 143743466 deadends, 65515 win tests - 2094 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4-1,6..so far 251551075 routes, 143743466 deadends, 65515 win tests - 4145 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,4..so far 251551075 routes, 143743466 deadends, 65515 win tests - 8427 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,4-1,5..so far 272517069 routes, 155724034 deadends, 70975 win tests - 2098 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,4-1,6..so far 293488265 routes, 167707575 deadends, 76436 win tests - 2135 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,4..so far 293488265 routes, 167707575 deadends, 76436 win tests - 4234 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,6-1,4..so far 314459464 routes, 179691117 deadends, 81897 win tests - 2109 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,6-1,5..so far 335415131 routes, 191665784 deadends, 87356 win tests - 2075 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5-1,6..so far 335415131 routes, 191665784 deadends, 87356 win tests - 4184 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6-1,5..so far 335415131 routes, 191665784 deadends, 87356 win tests - 8419 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5-1,6..so far 335415131 routes, 191665784 deadends, 87356 win tests - 16846 ms
+1-1,2-1,3-1,4-1,5-1,4-1,5..so far 335415131 routes, 191665784 deadends, 87356 win tests - 33888 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,4-1,5..so far 356381130 routes, 203646354 deadends, 92817 win tests - 2059 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,4-1,6..so far 377352326 routes, 215629895 deadends, 98278 win tests - 2047 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,4..so far 377352326 routes, 215629895 deadends, 98278 win tests - 4106 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,6-1,4..so far 398323525 routes, 227613437 deadends, 103739 win tests - 2128 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,6-1,5..so far 419289514 routes, 239594002 deadends, 109199 win tests - 2104 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5-1,6..so far 419289514 routes, 239594002 deadends, 109199 win tests - 4232 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,5..so far 419289514 routes, 239594002 deadends, 109199 win tests - 8338 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,4-1,5..so far 440260713 routes, 251577544 deadends, 114660 win tests - 2158 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,4-1,6..so far 461216378 routes, 263552210 deadends, 120120 win tests - 2063 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,4..so far 461216378 routes, 263552210 deadends, 120120 win tests - 4221 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,5-1,4..so far 482187577 routes, 275535752 deadends, 125581 win tests - 2183 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,5-1,6..so far 503153566 routes, 287516317 deadends, 131041 win tests - 2100 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6-1,5..so far 503153566 routes, 287516317 deadends, 131041 win tests - 4283 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4-1,6..so far 503153566 routes, 287516317 deadends, 131041 win tests - 8505 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,4..so far 503153566 routes, 287516317 deadends, 131041 win tests - 16844 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,5-1,4..so far 524119560 routes, 299496884 deadends, 136502 win tests - 2132 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,5-1,6..so far 545090758 routes, 311480426 deadends, 141963 win tests - 2051 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,5..so far 545090758 routes, 311480426 deadends, 141963 win tests - 4184 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,6-1,4..so far 566056749 routes, 323460992 deadends, 147423 win tests - 2063 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,6-1,5..so far 587027947 routes, 335444534 deadends, 152884 win tests - 2048 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4-1,6..so far 587027947 routes, 335444534 deadends, 152884 win tests - 4111 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,4..so far 587027947 routes, 335444534 deadends, 152884 win tests - 8296 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,4-1,5..so far 607999148 routes, 347428077 deadends, 158345 win tests - 2056 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,4-1,6..so far 628965137 routes, 359408643 deadends, 163805 win tests - 2051 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,4..so far 628965137 routes, 359408643 deadends, 163805 win tests - 4107 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,5-1,4..so far 649936336 routes, 371392185 deadends, 169266 win tests - 2055 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,5-1,6..so far 670892003 routes, 383366852 deadends, 174725 win tests - 2051 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6-1,5..so far 670892003 routes, 383366852 deadends, 174725 win tests - 4106 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5-1,6..so far 670892003 routes, 383366852 deadends, 174725 win tests - 8213 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6-1,5..so far 670892003 routes, 383366852 deadends, 174725 win tests - 16509 ms
+1-1,2-1,3-1,4-1,5-1,4-1,6..so far 670892003 routes, 383366852 deadends, 174725 win tests - 33354 ms
+1-1,2-1,3-1,4-1,5-1,4..so far 670892003 routes, 383366852 deadends, 174725 win tests - 67242 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,5-1,4..so far 691847680 routes, 395341523 deadends, 180184 win tests - 2049 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,5-1,6..so far 712818878 routes, 407325065 deadends, 185645 win tests - 2053 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,5..so far 712818878 routes, 407325065 deadends, 185645 win tests - 4103 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,6-1,4..so far 733784869 routes, 419305631 deadends, 191105 win tests - 2049 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,6-1,5..so far 754756067 routes, 431289173 deadends, 196566 win tests - 2053 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4-1,6..so far 754756067 routes, 431289173 deadends, 196566 win tests - 4102 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,4..so far 754756067 routes, 431289173 deadends, 196566 win tests - 8205 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,4-1,5..so far 775727268 routes, 443272716 deadends, 202027 win tests - 2055 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,4-1,6..so far 796693257 routes, 455253282 deadends, 207487 win tests - 2045 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,4..so far 796693257 routes, 455253282 deadends, 207487 win tests - 4100 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,5-1,4..so far 817664456 routes, 467236824 deadends, 212948 win tests - 2053 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,5-1,6..so far 838630445 routes, 479217389 deadends, 218409 win tests - 2050 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6-1,5..so far 838630445 routes, 479217389 deadends, 218409 win tests - 4103 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5-1,6..so far 838630445 routes, 479217389 deadends, 218409 win tests - 8204 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,5..so far 838630445 routes, 479217389 deadends, 218409 win tests - 16409 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,5-1,4..so far 859596441 routes, 491197957 deadends, 223869 win tests - 2086 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,5-1,6..so far 880567639 routes, 503181499 deadends, 229330 win tests - 2141 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,5..so far 880567639 routes, 503181499 deadends, 229330 win tests - 4227 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,6-1,4..so far 901523306 routes, 515156166 deadends, 234790 win tests - 2154 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,6-1,5..so far 922494504 routes, 527139708 deadends, 240251 win tests - 2101 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4-1,6..so far 922494504 routes, 527139708 deadends, 240251 win tests - 4255 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,4..so far 922494504 routes, 527139708 deadends, 240251 win tests - 8483 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,4-1,5..so far 943460498 routes, 539120276 deadends, 245711 win tests - 2093 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,4-1,6..so far 964431694 routes, 551103817 deadends, 251172 win tests - 2100 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,4..so far 964431694 routes, 551103817 deadends, 251172 win tests - 4193 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,6-1,4..so far 985402893 routes, 563087359 deadends, 256633 win tests - 2106 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,6-1,5..so far 1006368882 routes, 575067924 deadends, 262094 win tests - 2137 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5-1,6..so far 1006368882 routes, 575067924 deadends, 262094 win tests - 4243 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6-1,5..so far 1006368882 routes, 575067924 deadends, 262094 win tests - 8436 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4-1,6..so far 1006368882 routes, 575067924 deadends, 262094 win tests - 16920 ms
+1-1,2-1,3-1,4-1,5-1,6-1,4..so far 1006368882 routes, 575067924 deadends, 262094 win tests - 33329 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,4-1,5..so far 1027324557 routes, 587042594 deadends, 267553 win tests - 2130 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,4-1,6..so far 1048295753 routes, 599026135 deadends, 273014 win tests - 2145 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,4..so far 1048295753 routes, 599026135 deadends, 273014 win tests - 4276 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,6-1,4..so far 1069266952 routes, 611009677 deadends, 278475 win tests - 2146 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,6-1,5..so far 1090232941 routes, 622990242 deadends, 283935 win tests - 2123 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5-1,6..so far 1090232941 routes, 622990242 deadends, 283935 win tests - 4269 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,5..so far 1090232941 routes, 622990242 deadends, 283935 win tests - 8546 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,4-1,5..so far 1111204142 routes, 634973785 deadends, 289396 win tests - 2159 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,4-1,6..so far 1132170131 routes, 646954351 deadends, 294857 win tests - 2148 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,4..so far 1132170131 routes, 646954351 deadends, 294857 win tests - 4307 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,5-1,4..so far 1153141330 routes, 658937893 deadends, 300318 win tests - 2252 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,5-1,6..so far 1174107319 routes, 670918458 deadends, 305778 win tests - 2137 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6-1,5..so far 1174107319 routes, 670918458 deadends, 305778 win tests - 4389 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4-1,6..so far 1174107319 routes, 670918458 deadends, 305778 win tests - 8696 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,4..so far 1174107319 routes, 670918458 deadends, 305778 win tests - 17242 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,5-1,4..so far 1195073315 routes, 682899026 deadends, 311238 win tests - 2049 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,5-1,6..so far 1216044513 routes, 694882568 deadends, 316699 win tests - 2108 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,5..so far 1216044513 routes, 694882568 deadends, 316699 win tests - 4157 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,6-1,4..so far 1237010502 routes, 706863133 deadends, 322160 win tests - 2090 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,6-1,5..so far 1257981700 routes, 718846675 deadends, 327621 win tests - 2059 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4-1,6..so far 1257981700 routes, 718846675 deadends, 327621 win tests - 4149 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,4..so far 1257981700 routes, 718846675 deadends, 327621 win tests - 8307 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,4-1,5..so far 1278947694 routes, 730827243 deadends, 333081 win tests - 2048 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,4-1,6..so far 1299918890 routes, 742810784 deadends, 338542 win tests - 2052 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,4..so far 1299918890 routes, 742810784 deadends, 338542 win tests - 4100 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,6-1,4..so far 1320890089 routes, 754794326 deadends, 344003 win tests - 2057 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,6-1,5..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 2074 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5-1,6..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 4131 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6-1,5..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 8231 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5-1,6..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 16538 ms
+1-1,2-1,3-1,4-1,5-1,6-1,5..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 33782 ms
+1-1,2-1,3-1,4-1,5-1,6..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 67111 ms
+1-1,2-1,3-1,4-1,5..so far 1341825111 routes, 766757196 deadends, 349458 win tests - 134353 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,4-1,5..so far 1362780789 routes, 778731867 deadends, 354918 win tests - 2143 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,4-1,6..so far 1383751985 routes, 790715408 deadends, 360379 win tests - 2102 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,4..so far 1383751985 routes, 790715408 deadends, 360379 win tests - 4245 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,6-1,4..so far 1404723184 routes, 802698950 deadends, 365840 win tests - 2112 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,6-1,5..so far 1425689173 routes, 814679515 deadends, 371300 win tests - 2097 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5-1,6..so far 1425689173 routes, 814679515 deadends, 371300 win tests - 4209 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,5..so far 1425689173 routes, 814679515 deadends, 371300 win tests - 8454 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,4-1,5..so far 1446660374 routes, 826663058 deadends, 376761 win tests - 2154 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,4-1,6..so far 1467626363 routes, 838643624 deadends, 382222 win tests - 2085 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,4..so far 1467626363 routes, 838643624 deadends, 382222 win tests - 4241 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,5-1,4..so far 1488597562 routes, 850627166 deadends, 387683 win tests - 2053 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,5-1,6..so far 1509563551 routes, 862607731 deadends, 393143 win tests - 2081 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6-1,5..so far 1509563551 routes, 862607731 deadends, 393143 win tests - 4135 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4-1,6..so far 1509563551 routes, 862607731 deadends, 393143 win tests - 8376 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,4..so far 1509563551 routes, 862607731 deadends, 393143 win tests - 16830 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,5-1,4..so far 1530529547 routes, 874588299 deadends, 398603 win tests - 2112 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,5-1,6..so far 1551500745 routes, 886571841 deadends, 404064 win tests - 2133 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,5..so far 1551500745 routes, 886571841 deadends, 404064 win tests - 4245 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,6-1,4..so far 1572466734 routes, 898552406 deadends, 409525 win tests - 2162 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,6-1,5..so far 1593437932 routes, 910535948 deadends, 414986 win tests - 2155 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4-1,6..so far 1593437932 routes, 910535948 deadends, 414986 win tests - 4317 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,4..so far 1593437932 routes, 910535948 deadends, 414986 win tests - 8562 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,4-1,5..so far 1614403926 routes, 922516516 deadends, 420446 win tests - 2119 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,4-1,6..so far 1635375122 routes, 934500057 deadends, 425907 win tests - 2146 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,4..so far 1635375122 routes, 934500057 deadends, 425907 win tests - 4267 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,6-1,4..so far 1656346321 routes, 946483599 deadends, 431368 win tests - 2145 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,6-1,5..so far 1677301988 routes, 958458266 deadends, 436827 win tests - 2167 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5-1,6..so far 1677301988 routes, 958458266 deadends, 436827 win tests - 4312 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6-1,5..so far 1677301988 routes, 958458266 deadends, 436827 win tests - 8580 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5-1,6..so far 1677301988 routes, 958458266 deadends, 436827 win tests - 17142 ms
+1-1,2-1,3-1,4-1,6-1,4-1,5..so far 1677301988 routes, 958458266 deadends, 436827 win tests - 33972 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,4-1,5..so far 1698267985 routes, 970438835 deadends, 442289 win tests - 2069 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,4-1,6..so far 1719239181 routes, 982422376 deadends, 447750 win tests - 2154 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,4..so far 1719239181 routes, 982422376 deadends, 447750 win tests - 4223 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,6-1,4..so far 1740210380 routes, 994405918 deadends, 453211 win tests - 2126 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,6-1,5..so far 1761176369 routes, 1006386483 deadends, 458671 win tests - 2187 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5-1,6..so far 1761176369 routes, 1006386483 deadends, 458671 win tests - 4313 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,5..so far 1761176369 routes, 1006386483 deadends, 458671 win tests - 8536 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,4-1,5..so far 1782147568 routes, 1018370025 deadends, 464133 win tests - 2158 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,4-1,6..so far 1803041470 routes, 1030309398 deadends, 469577 win tests - 2042 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,4..so far 1803041470 routes, 1030309398 deadends, 469577 win tests - 4200 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,5-1,4..so far 1824012669 routes, 1042292940 deadends, 475039 win tests - 2126 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,5-1,6..so far 1844978658 routes, 1054273505 deadends, 480499 win tests - 2140 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6-1,5..so far 1844978658 routes, 1054273505 deadends, 480499 win tests - 4266 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4-1,6..so far 1844978658 routes, 1054273505 deadends, 480499 win tests - 8466 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,4..so far 1844978658 routes, 1054273505 deadends, 480499 win tests - 17002 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,5-1,4..so far 1865944652 routes, 1066254072 deadends, 485960 win tests - 2124 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,5-1,6..so far 1886915850 routes, 1078237614 deadends, 491421 win tests - 2132 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,5..so far 1886915850 routes, 1078237614 deadends, 491421 win tests - 4256 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,6-1,4..so far 1907881841 routes, 1090218180 deadends, 496881 win tests - 2116 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,6-1,5..so far 1928853039 routes, 1102201722 deadends, 502342 win tests - 2140 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4-1,6..so far 1928853039 routes, 1102201722 deadends, 502342 win tests - 4256 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,4..so far 1928853039 routes, 1102201722 deadends, 502342 win tests - 8513 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,4-1,5..so far 1949824240 routes, 1114185265 deadends, 507803 win tests - 2150 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,4-1,6..so far 1970790229 routes, 1126165831 deadends, 513263 win tests - 2130 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,4..so far 1970790229 routes, 1126165831 deadends, 513263 win tests - 4280 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,5-1,4..so far 1991761428 routes, 1138149373 deadends, 518724 win tests - 2153 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,5-1,6..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 2154 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6-1,5..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 4307 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5-1,6..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 8587 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6-1,5..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 17100 ms
+1-1,2-1,3-1,4-1,6-1,4-1,6..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 34102 ms
+1-1,2-1,3-1,4-1,6-1,4..so far 2012717095 routes, 1150124040 deadends, 524183 win tests - 68075 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,5-1,4..so far 2033672772 routes, 1162098711 deadends, 529643 win tests - 2121 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,5-1,6..so far 2054643970 routes, 1174082253 deadends, 535104 win tests - 2115 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,5..so far 2054643970 routes, 1174082253 deadends, 535104 win tests - 4236 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,6-1,4..so far 2075609961 routes, 1186062819 deadends, 540564 win tests - 2052 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,6-1,5..so far 2096581159 routes, 1198046361 deadends, 546025 win tests - 2055 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4-1,6..so far 2096581159 routes, 1198046361 deadends, 546025 win tests - 4108 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,4..so far 2096581159 routes, 1198046361 deadends, 546025 win tests - 8344 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,4-1,5..so far 2117552360 routes, 1210029904 deadends, 551486 win tests - 2052 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,4-1,6..so far 2138518349 routes, 1222010470 deadends, 556946 win tests - 2112 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,4..so far 2138518349 routes, 1222010470 deadends, 556946 win tests - 4164 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,5-1,4..so far 2159489548 routes, 1233994012 deadends, 562407 win tests - 2088 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,5-1,6..so far 2180455537 routes, 1245974577 deadends, 567868 win tests - 2157 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6-1,5..so far 2180455537 routes, 1245974577 deadends, 567868 win tests - 4245 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5-1,6..so far 2180455537 routes, 1245974577 deadends, 567868 win tests - 8409 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,5..so far 2180455537 routes, 1245974577 deadends, 567868 win tests - 16753 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,5-1,4..so far 2201421533 routes, 1257955145 deadends, 573328 win tests - 2108 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,5-1,6..so far 2222392731 routes, 1269938687 deadends, 578789 win tests - 2111 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,5..so far 2222392731 routes, 1269938687 deadends, 578789 win tests - 4219 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,6-1,4..so far 2243348398 routes, 1281913354 deadends, 584248 win tests - 2170 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,6-1,5..so far 2264319596 routes, 1293896896 deadends, 589709 win tests - 2203 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4-1,6..so far 2264319596 routes, 1293896896 deadends, 589709 win tests - 4373 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,4..so far 2264319596 routes, 1293896896 deadends, 589709 win tests - 8593 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,4-1,5..so far 2285285590 routes, 1305877464 deadends, 595169 win tests - 2089 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,4-1,6..so far 2306256786 routes, 1317861005 deadends, 600630 win tests - 2120 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,4..so far 2306256786 routes, 1317861005 deadends, 600630 win tests - 4210 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,6-1,4..so far 2327227985 routes, 1329844547 deadends, 606091 win tests - 2121 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,6-1,5..so far 2348193974 routes, 1341825112 deadends, 611552 win tests - 2111 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5-1,6..so far 2348193974 routes, 1341825112 deadends, 611552 win tests - 4233 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6-1,5..so far 2348193974 routes, 1341825112 deadends, 611552 win tests - 8443 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4-1,6..so far 2348193974 routes, 1341825112 deadends, 611552 win tests - 17036 ms
+1-1,2-1,3-1,4-1,6-1,5-1,4..so far 2348193974 routes, 1341825112 deadends, 611552 win tests - 33789 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,4-1,5..so far 2369159973 routes, 1353805682 deadends, 617013 win tests - 2144 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,4-1,6..so far 2390131169 routes, 1365789223 deadends, 622474 win tests - 2116 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,4..so far 2390131169 routes, 1365789223 deadends, 622474 win tests - 4260 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,6-1,4..so far 2411102368 routes, 1377772765 deadends, 627935 win tests - 2185 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,6-1,5..so far 2432068357 routes, 1389753330 deadends, 633395 win tests - 2110 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5-1,6..so far 2432068357 routes, 1389753330 deadends, 633395 win tests - 4295 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,5..so far 2432068357 routes, 1389753330 deadends, 633395 win tests - 8555 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,4-1,5..so far 2453039558 routes, 1401736873 deadends, 638856 win tests - 2161 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,4-1,6..so far 2473995223 routes, 1413711539 deadends, 644315 win tests - 2063 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,4..so far 2473995223 routes, 1413711539 deadends, 644315 win tests - 4224 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,5-1,4..so far 2494966422 routes, 1425695081 deadends, 649776 win tests - 2066 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,5-1,6..so far 2515932411 routes, 1437675646 deadends, 655236 win tests - 2150 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6-1,5..so far 2515932411 routes, 1437675646 deadends, 655236 win tests - 4216 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4-1,6..so far 2515932411 routes, 1437675646 deadends, 655236 win tests - 8440 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,4..so far 2515932411 routes, 1437675646 deadends, 655236 win tests - 16996 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,5-1,4..so far 2536898405 routes, 1449656213 deadends, 660697 win tests - 2062 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,5-1,6..so far 2557869603 routes, 1461639755 deadends, 666158 win tests - 2052 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,5..so far 2557869603 routes, 1461639755 deadends, 666158 win tests - 4115 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,6-1,4..so far 2578835594 routes, 1473620321 deadends, 671618 win tests - 2051 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,6-1,5..so far 2599806792 routes, 1485603863 deadends, 677079 win tests - 2054 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4-1,6..so far 2599806792 routes, 1485603863 deadends, 677079 win tests - 4105 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,4..so far 2599806792 routes, 1485603863 deadends, 677079 win tests - 8221 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,4-1,5..so far 2620777993 routes, 1497587406 deadends, 682540 win tests - 2054 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,4-1,6..so far 2641743982 routes, 1509567972 deadends, 688000 win tests - 2055 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,4..so far 2641743982 routes, 1509567972 deadends, 688000 win tests - 4109 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,5-1,4..so far 2662715181 routes, 1521551514 deadends, 693461 win tests - 2065 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,5-1,6..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 2088 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6-1,5..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 4153 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5-1,6..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 8263 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6-1,5..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 16484 ms
+1-1,2-1,3-1,4-1,6-1,5-1,6..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 33480 ms
+1-1,2-1,3-1,4-1,6-1,5..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 67269 ms
+1-1,2-1,3-1,4-1,6..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 135344 ms
+1-1,2-1,3-1,4..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 269697 ms
+1-1,2-1,3..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 269698 ms
+1-1,2..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 269698 ms
+1..so far 2683650203 routes, 1533514384 deadends, 698916 win tests - 269698 ms
+Tested 2683650203 routes, 1533514384 of which lead to death, 698916 led to momentary ammo increase, in 269698 ms. Ended with 0 leaves.
+All routes resolve to death. Best route: 199 kills in 34 steps
+ 0:1,0-100 1:2,1-76 2:3,1-53 3:4,1-31 4:5,1-31 5:4,1-29 6:5,1-27 7:4,1-25 8:5,1-23 9:4,1-21 10:5,1-19 11:4,1-17 12:5,1-15 13:4,1-13 14:5,1-11 15:4,1-9 16:5,1-7 17:4,1-5 18:6,1-19 19:4,1-17 20:5,1-17 21:4,1-15 22:5,1-13 23:4,1-11 24:5,1-9 25:4,1-7 26:5,1-5 27:6,1-10 28:4,1-9 29:5,1-8 30:4,1-6 31:6,1-6 32:5,1-5 33:4,1-4 34:3,1-11
