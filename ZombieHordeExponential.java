@@ -212,13 +212,13 @@ public class ZombieHordeExponential {
 			}
 
 		}
-		if (System.currentTimeMillis()-depthTime>2000L){
+		/*if (System.currentTimeMillis()-depthTime>2000L){
 			System.out.print("1");
 			for(int pR=1;pR<=depth;pR++)
 				System.out.printf("-%d,%d",routes[pR][m+1],routes[pR][m]);
 			System.out.printf("..so far %d routes, %d deadends, %d win tests - %d ms\n",
 				totalRoutes, deadRoutes, winTestRoutes, System.currentTimeMillis()-depthTime);
-		}
+		}*/
 		if (routesTested==deathCount) { // all the routes we tested resulted in death. TODO prune this for future IDDFs.
 			deadBranches[depth]++;
 			return 1;
@@ -228,5 +228,13 @@ public class ZombieHordeExponential {
 			}
 			return 0;
 		}
+	}
+	int[]zip(int depth){
+		int[]zip=new int[m+2];
+		zip[0]=depth;//Steps on route.
+		zip[m]=routes[depth][0];//ammo at end of route
+		zip[m+1]=routes[depth][m+2];//dead zombies at end of route
+		for(int zipper=0;zipper<=depth;zipper++)
+			zip[routes[zipper][m]]=zipper;//last visit to this node
 	}
 }
