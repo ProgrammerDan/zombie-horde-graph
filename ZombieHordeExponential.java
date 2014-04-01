@@ -237,4 +237,10 @@ public class ZombieHordeExponential {
 		for(int zipper=0;zipper<=depth;zipper++)
 			zip[routes[zipper][m]]=zipper;//last visit to this node
 	}
+	void unzip(int[]zip){
+		routes[zip[0]][0]=zip[m];//restore ammo
+		routes[zip[0]][m+2]=zip[m+1];//zombies slaughtered
+		for(int zipper=1;zipper<m;zipper++)
+			routes[zip[zipper]][m]=zipper;//unwrap visits to the route in a sparse way. TODO does this terminally break win checks? How to refactor to allow zipping.
+	}
 }
