@@ -243,4 +243,35 @@ public class ZombieHordeExponential {
 		for(int zipper=1;zipper<m;zipper++)
 			routes[zip[zipper]][m]=zipper;//unwrap visits to the route in a sparse way. TODO does this terminally break win checks? How to refactor to allow zipping.
 	}
+	int[]compress(int depth){
+		int[]cmp=new int[depth*2+3];
+		cmp[0]=depth;
+		cmp[depth*2+1]=routes[depth][0];
+		cmp[depth*2+2]=routes[depth][m+2];
+		for(int zip=1;zip<=depth;zip++){
+			cmp[zip]=routes[zip][m];
+			cmp[depth+zip]=routes[zip][m+1];
+		}
+		return cmp;
+	}
+	/**Decompress but doesn't fill route ammo tables completely, only for the route taken.*/
+	void decompressSparse(int[]cmp){
+		int[]lv=new int[m];
+		int depth=cmp[0];
+		routes[depth][0]=cmp[depth*2+1];
+		routes[depth][m+2]=cmp[depth*2+2];
+		//routes[0][1]=1;
+		routes[0][0]=100;
+		routes[0][m]=1;
+		for(int dp=1;dp<=depth;dp++){
+			routes[dp][m]=cmp[dp];
+			routes[dp][m+1]=cmp[depth+dp];
+			routes[dp-1][cmp[dp]]=dp-lv[cmp[dp]];
+			routes[dp][m+2]=routes[dp-1][m+2]+p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
+			routes[dp][0]=routes[dp-1][0]+routes[dp-1][cmp[dp]]-p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
+			lv[cmp[dp]]=dp;
+		}
+		for(int am=1;am<=m;am++)
+			routes[depth][am]=depth-lv[am];
+	}
 }
