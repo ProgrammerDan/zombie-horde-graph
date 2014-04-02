@@ -66,12 +66,16 @@ public class ZombieHordeExponential {
 	long[] deadBranches;
 	long[] liveBranches;
 	int leaves[][][];
+	int fastforward[][];
+	int ff;
 	int maxLeaf;
 
 	/** 
 	 * IDDF approach to picking a route. Keep trying deeper depths until we find a solution.
 	 */
 	void pickRoute(int absoluteMaxDepth){
+		fastforward = new int[10000000][];
+		ff=0;
 		for (int mD = 1; mD <= absoluteMaxDepth; mD++) {
 			System.out.printf("Testing all routes of length %d\n", mD);
 			totalProcessTime=System.currentTimeMillis();
@@ -79,12 +83,13 @@ public class ZombieHordeExponential {
 			liveBranches=new long[mD];
 			deadBranches=new long[mD];
 			totalBranches=new long[mD];
-			int k = pickRoute(0,mD);
-			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms. Ended with %d leaves.\n",
-					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime, leafCount);
-			System.out.printf("dep: %10s %10s %10s\n","total","dead","live");
-			for(int qq=0;qq<mD;qq++)
-				System.out.printf("%3d: %10d %10d %10d\n",qq,totalBranches[qq],deadBranches[qq],liveBranches[qq]);
+			int k = ffRoute(0,mD);
+			//int k = pickRoute(0,mD);
+			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms. Ended with %d leaves and %d FFnodes.\n",
+					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime, leafCount, ff);
+			//System.out.printf("dep: %10s %10s %10s\n","total","dead","live");
+			//for(int qq=0;qq<mD;qq++)
+			//	System.out.printf("%3d: %10d %10d %10d\n",qq,totalBranches[qq],deadBranches[qq],liveBranches[qq]);
 			if (winwin<Integer.MAX_VALUE){
 				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
 				for (int win=0; win<=winwin;win++){
@@ -102,6 +107,34 @@ public class ZombieHordeExponential {
 				break;
 			}
 		}
+	}
+
+	int ffRoute(int depth, int maxDepth){
+		if (ff==0){
+			return pickRoute(depth, maxDepth);
+		}
+		int kk=0;
+		int fm=ff;ff=0;
+		int[][] fastmovement = fastforward;
+		fastforward = new int[10000000][];
+		//try{Thread.sleep(100);}catch(Exception e){}
+		for (int df=0;df<fm;df++){
+			// clear route
+			for (int dp=0;dp<=fastmovement[df][0];dp++)
+				for(int dm=0;dm<m+3;dm++)
+					routes[dp][dm]=0;
+			decompressSparse(fastmovement[df]);
+			/*System.out.printf("Decompressed FF %d\n",df);
+			for (int b=0;b<=m+2;b++){
+				for (int a=0;a<=fastmovement[df][0];a++){
+					System.out.printf(" %3d",routes[a][b]);
+				}
+				System.out.println();
+			}*/
+			kk+=pickRoute(fastmovement[df][0],maxDepth);
+		}
+		fastmovement=null;
+		return kk==fm?1:0;
 	}
 
 	/**
@@ -226,8 +259,14 @@ public class ZombieHordeExponential {
 			if (deathCount==0){
 				liveBranches[depth]++;
 			}
+			// add to compressed list only if at a leaf and we should recheck this later (e.g. not all deaths)
+			if (depth == maxDepth-1) 
+				addCompressed(compress(depth));
 			return 0;
 		}
+	}
+	void addCompressed(int[]cmp){
+		fastforward[ff++]=cmp;
 	}
 	int[]zip(int depth){
 		int[]zip=new int[m+2];
