@@ -4,6 +4,7 @@ public class ZombieHordeExponential {
 	int p[][][];
 	int o[];
 	Scanner in;
+	Runtime rt;
 	public static void main(String[]a){
 		(new ZombieHordeExponential()).pickRoute();
 	}
@@ -20,6 +21,7 @@ public class ZombieHordeExponential {
 	 */
 	ZombieHordeExponential() {
 		in = new Scanner(System.in);
+		rt = Runtime.getRuntime();
 		m = in.nextInt();
 		N = in.nextInt();
 		p = new int[m+1][m+1][N+1];
@@ -65,17 +67,17 @@ public class ZombieHordeExponential {
 	long[] totalBranches;
 	long[] deadBranches;
 	long[] liveBranches;
-	int leaves[][][];
 	int fastforward[][];
 	int ff;
-	int maxLeaf;
+	boolean ffOn;
 
 	/** 
 	 * IDDF approach to picking a route. Keep trying deeper depths until we find a solution.
 	 */
 	void pickRoute(int absoluteMaxDepth){
-		fastforward = new int[10000000][];
+		fastforward = new int[N][];
 		ff=0;
+		ffOn=true;
 		for (int mD = 1; mD <= absoluteMaxDepth; mD++) {
 			System.out.printf("Testing all routes of length %d\n", mD);
 			totalProcessTime=System.currentTimeMillis();
@@ -84,7 +86,6 @@ public class ZombieHordeExponential {
 			deadBranches=new long[mD];
 			totalBranches=new long[mD];
 			int k = ffRoute(0,mD);
-			//int k = pickRoute(0,mD);
 			System.out.printf("Tested %d routes, %d of which lead to death, %d led to momentary ammo increase, in %d ms. Ended with %d leaves and %d FFnodes.\n",
 					totalRoutes,deadRoutes,winTestRoutes,System.currentTimeMillis()-totalProcessTime, leafCount, ff);
 			//System.out.printf("dep: %10s %10s %10s\n","total","dead","live");
@@ -114,26 +115,24 @@ public class ZombieHordeExponential {
 			return pickRoute(depth, maxDepth);
 		}
 		int kk=0;
-		int fm=ff;ff=0;
+		int fm=ff;
+		if (ffOn&&N*fm>rt.maxMemory()/(fastforward[0][0]*8+12))
+			ffOn=false;
+
 		int[][] fastmovement = fastforward;
-		fastforward = new int[10000000][];
-		//try{Thread.sleep(100);}catch(Exception e){}
+
+		if (ffOn){
+			System.out.printf("Allocating %d ff entries as it is <= %d\n", N*fm, rt.maxMemory()/(fastforward[0][0]*8+12));
+			fastforward = new int[N*fm][];
+			ff=0;
+		}
+
 		for (int df=0;df<fm;df++){
-			// clear route
-			for (int dp=0;dp<=fastmovement[df][0];dp++)
-				for(int dm=0;dm<m+3;dm++)
-					routes[dp][dm]=0;
 			decompressSparse(fastmovement[df]);
-			/*System.out.printf("Decompressed FF %d\n",df);
-			for (int b=0;b<=m+2;b++){
-				for (int a=0;a<=fastmovement[df][0];a++){
-					System.out.printf(" %3d",routes[a][b]);
-				}
-				System.out.println();
-			}*/
 			kk+=pickRoute(fastmovement[df][0],maxDepth);
 		}
 		fastmovement=null;
+		rt.gc();
 		return kk==fm?1:0;
 	}
 
@@ -143,7 +142,7 @@ public class ZombieHordeExponential {
 	 */
 	int pickRoute(int depth, int maxDepth){
 		if (depth==maxDepth) {// IDDF Cap.
-			leafCount++; // let's start to estimate the feasibility of branch pruning by starting the next IDDF round only at the prior reachable leaf nodes.
+			leafCount++; // Currently I generate route compressions at maxDepth-1, I could generate them here instead and do +2 depth a turn... 
 			return 0;
 		}
 
@@ -153,8 +152,8 @@ public class ZombieHordeExponential {
 
 		int routesTested = 0;
 		int deathCount = 0;
-		int source = routes[depth][m];//(depth<1)?1:routes[depth][m];
-		int startammo = routes[depth][0];//(depth<1)?a:routes[depth][0];
+		int source = routes[depth][m];
+		int startammo = routes[depth][0];
 		for(int dest=1;dest<m;dest++){
 			//System.out.printf("Looking at dest %d", dest);
 			for (int route=1;route<=p[source][dest][0];route++){
@@ -201,10 +200,6 @@ public class ZombieHordeExponential {
 								routes[depth+2][0]=routes[depth+2][0] // start with current ammo
 										-p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1] ] // subtract zombies on route taken
 										+routes[depth+2][ routes[followRoute][m] ]; // add in ammo gained on arrival
-								//if (routes[depth+2][0]<routes[followRoute+1][0]) {
-									// if at any point in our retread we wind up with less any than we start with, game over man.
-									//break;
-								//}
 								// copy forward rest of stuff, deal with ammo.
 								for (int cp=1;cp<m;cp++)
 									routes[depth+2][cp]=(routes[followRoute][m]==cp?1:routes[depth+2][cp]+1);
@@ -243,24 +238,25 @@ public class ZombieHordeExponential {
 				for (int cp=0;cp<m+3;cp++)
 					routes[depth+1][cp]=0;
 			}
-
 		}
-		/*if (System.currentTimeMillis()-depthTime>2000L){
+		// Progress reporting for the impatient
+		if (System.currentTimeMillis()-depthTime>2000L){
 			System.out.print("1");
 			for(int pR=1;pR<=depth;pR++)
 				System.out.printf("-%d,%d",routes[pR][m+1],routes[pR][m]);
 			System.out.printf("..so far %d routes, %d deadends, %d win tests - %d ms\n",
 				totalRoutes, deadRoutes, winTestRoutes, System.currentTimeMillis()-depthTime);
-		}*/
-		if (routesTested==deathCount) { // all the routes we tested resulted in death. TODO prune this for future IDDFs.
+		}
+		if (routesTested==deathCount) { // all the routes we tested resulted in death. Earliest all-death branches are pruned.
 			deadBranches[depth]++;
 			return 1;
 		} else {
 			if (deathCount==0){
 				liveBranches[depth]++;
 			}
-			// add to compressed list only if at a leaf and we should recheck this later (e.g. not all deaths)
-			if (depth == maxDepth-1) 
+			// add to compressed list only if at from a final branch and we should recheck this later (e.g. not all deaths)
+			// TODO: consider collecting compressed frames at leaves.
+			if (ffOn&&depth == maxDepth-1) 
 				addCompressed(compress(depth));
 			return 0;
 		}
@@ -268,21 +264,47 @@ public class ZombieHordeExponential {
 	void addCompressed(int[]cmp){
 		fastforward[ff++]=cmp;
 	}
-	int[]zip(int depth){
-		int[]zip=new int[m+2];
-		zip[0]=depth;//Steps on route.
-		zip[m]=routes[depth][0];//ammo at end of route
-		zip[m+1]=routes[depth][m+2];//dead zombies at end of route
-		for(int zipper=0;zipper<=depth;zipper++)
-			zip[routes[zipper][m]]=zipper;//last visit to this node
-		return zip;
+	/**Compress. Basically, store depth, ending ammo and kills, and strictly which node was visited by what path along the way.
+	 * We can compress depth*(m+3) to (depth*2+3), a significant compression:
+	 * for m = 5:
+	 * 1: 5/8 = 37.5% compression
+	 * 2: 7/16 = 56.3%
+	 * 3: 9/24 = 62.5%
+	 * 4: 11/32 = 65.6%
+	 * 5: 13/40 = 67.5%
+	 * etc.
+	 */
+	int[]compress(int depth){
+		int[]cmp=new int[depth*2+3];
+		cmp[0]=depth;
+		cmp[depth*2+1]=routes[depth][0];
+		cmp[depth*2+2]=routes[depth][m+2];
+		for(int zip=1;zip<=depth;zip++){
+			cmp[zip]=routes[zip][m];
+			cmp[depth+zip]=routes[zip][m+1];
+		}
+		return cmp;
 	}
-	void unzip(int[]zip){
-		routes[zip[0]][0]=zip[m];//restore ammo
-		routes[zip[0]][m+2]=zip[m+1];//zombies slaughtered
-		for(int zipper=1;zipper<m;zipper++)
-			routes[zip[zipper]][m]=zipper;//unwrap visits to the route in a sparse way. TODO does this terminally break win checks? How to refactor to allow zipping.
+	/**Decompress but does not fill route ammo tables completely, only for the route taken.*/
+	void decompressSparse(int[]cmp){
+		int[]lv=new int[m];
+		int depth=cmp[0];
+		routes[depth][0]=cmp[depth*2+1];
+		routes[depth][m+2]=cmp[depth*2+2];
+		routes[0][0]=100;
+		routes[0][m]=1;
+		for(int dp=1;dp<=depth;dp++){
+			routes[dp][m]=cmp[dp];
+			routes[dp][m+1]=cmp[depth+dp];
+			routes[dp-1][cmp[dp]]=dp-lv[cmp[dp]];
+			routes[dp][m+2]=routes[dp-1][m+2]+p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
+			routes[dp][0]=routes[dp-1][0]+routes[dp-1][cmp[dp]]-p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
+			lv[cmp[dp]]=dp;
+		}
+		for(int am=1;am<m;am++)
+			routes[depth][am]=(am==cmp[depth]?1:depth-lv[am]+1);
 	}
+	/**Utility Function to compare original with compressed, used it to prove correctness*/
 	void compare(int depth){
 		int[] cmp = compress(depth);
 		System.out.println("original");
@@ -303,35 +325,4 @@ public class ZombieHordeExponential {
 		}
 	}
 
-	int[]compress(int depth){
-		int[]cmp=new int[depth*2+3];
-		cmp[0]=depth;
-		cmp[depth*2+1]=routes[depth][0];
-		cmp[depth*2+2]=routes[depth][m+2];
-		for(int zip=1;zip<=depth;zip++){
-			cmp[zip]=routes[zip][m];
-			cmp[depth+zip]=routes[zip][m+1];
-		}
-		return cmp;
-	}
-	/**Decompress but doesn't fill route ammo tables completely, only for the route taken.*/
-	void decompressSparse(int[]cmp){
-		int[]lv=new int[m];
-		int depth=cmp[0];
-		routes[depth][0]=cmp[depth*2+1];
-		routes[depth][m+2]=cmp[depth*2+2];
-		//routes[0][1]=1;
-		routes[0][0]=100;
-		routes[0][m]=1;
-		for(int dp=1;dp<=depth;dp++){
-			routes[dp][m]=cmp[dp];
-			routes[dp][m+1]=cmp[depth+dp];
-			routes[dp-1][cmp[dp]]=dp-lv[cmp[dp]];
-			routes[dp][m+2]=routes[dp-1][m+2]+p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
-			routes[dp][0]=routes[dp-1][0]+routes[dp-1][cmp[dp]]-p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
-			lv[cmp[dp]]=dp;
-		}
-		for(int am=1;am<m;am++)
-			routes[depth][am]=(am==cmp[depth]?1:depth-lv[am]+1);
-	}
 }
