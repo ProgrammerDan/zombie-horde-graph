@@ -120,8 +120,8 @@ public class ZombieHordeExponential {
 
 		int routesTested = 0;
 		int deathCount = 0;
-		int source = (depth<1)?1:routes[depth][m];
-		int startammo = (depth<1)?a:routes[depth][0];
+		int source = routes[depth][m];//(depth<1)?1:routes[depth][m];
+		int startammo = routes[depth][0];//(depth<1)?a:routes[depth][0];
 		for(int dest=1;dest<m;dest++){
 			//System.out.printf("Looking at dest %d", dest);
 			for (int route=1;route<=p[source][dest][0];route++){
@@ -130,7 +130,7 @@ public class ZombieHordeExponential {
 				routesTested++;totalRoutes++;
 				routes[depth+1][0]=startammo-p[source][dest][route]+routes[depth][dest];
 				for (int cp=1;cp<m;cp++)
-					routes[depth+1][cp]=(dest==cp)?1:routes[depth][cp]+1;
+					routes[depth+1][cp]=(dest==cp?1:routes[depth][cp]+1);
 				routes[depth+1][m]=dest;
 				routes[depth+1][m+1]=route;
 				routes[depth+1][m+2]=routes[depth][m+2]+p[source][dest][route];
@@ -168,13 +168,13 @@ public class ZombieHordeExponential {
 								routes[depth+2][0]=routes[depth+2][0] // start with current ammo
 										-p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1] ] // subtract zombies on route taken
 										+routes[depth+2][ routes[followRoute][m] ]; // add in ammo gained on arrival
-								if (routes[depth+2][0]<routes[followRoute+1][0]) {
+								//if (routes[depth+2][0]<routes[followRoute+1][0]) {
 									// if at any point in our retread we wind up with less any than we start with, game over man.
-									break;
-								}
+									//break;
+								//}
 								// copy forward rest of stuff, deal with ammo.
 								for (int cp=1;cp<m;cp++)
-									routes[depth+2][cp]=(routes[followRoute][m]==cp)?1:routes[depth+2][cp]+1;
+									routes[depth+2][cp]=(routes[followRoute][m]==cp?1:routes[depth+2][cp]+1);
 								// don't need to track zombie kills, but whatever. Might as well.
 								routes[depth+2][m+2]=routes[depth+2][m+2]+p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1]];
 								routes[depth+2][m]=routes[followRoute][m];
@@ -236,6 +236,7 @@ public class ZombieHordeExponential {
 		zip[m+1]=routes[depth][m+2];//dead zombies at end of route
 		for(int zipper=0;zipper<=depth;zipper++)
 			zip[routes[zipper][m]]=zipper;//last visit to this node
+		return zip;
 	}
 	void unzip(int[]zip){
 		routes[zip[0]][0]=zip[m];//restore ammo
@@ -243,6 +244,26 @@ public class ZombieHordeExponential {
 		for(int zipper=1;zipper<m;zipper++)
 			routes[zip[zipper]][m]=zipper;//unwrap visits to the route in a sparse way. TODO does this terminally break win checks? How to refactor to allow zipping.
 	}
+	void compare(int depth){
+		int[] cmp = compress(depth);
+		System.out.println("original");
+		for (int b=0;b<=m+2;b++){
+			for (int a=0;a<=depth;a++){
+				System.out.printf(" %3d",routes[a][b]);
+				routes[a][b]=0;//clear
+			}
+			System.out.println();
+		}
+		decompressSparse(cmp);
+		System.out.println("decompressed");
+		for (int b=0;b<=m+2;b++){
+			for (int a=0;a<=depth;a++){
+				System.out.printf(" %3d",routes[a][b]);
+			}
+			System.out.println();
+		}
+	}
+
 	int[]compress(int depth){
 		int[]cmp=new int[depth*2+3];
 		cmp[0]=depth;
@@ -271,7 +292,7 @@ public class ZombieHordeExponential {
 			routes[dp][0]=routes[dp-1][0]+routes[dp-1][cmp[dp]]-p[routes[dp-1][m]][cmp[dp]][cmp[depth+dp]];
 			lv[cmp[dp]]=dp;
 		}
-		for(int am=1;am<=m;am++)
-			routes[depth][am]=depth-lv[am];
+		for(int am=1;am<m;am++)
+			routes[depth][am]=(am==cmp[depth]?1:depth-lv[am]+1);
 	}
 }

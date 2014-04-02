@@ -6,8 +6,8 @@ public class ZombieHordeGraph {
 	int o[];
 	Scanner in;
 	public static void main(String[]a){
-		(new ZombieHordeGraph()).pickRoute();
-		//(new ZombieHordeGraph()).game();
+		//(new ZombieHordeGraph()).pickRoute();
+		(new ZombieHordeGraph()).game();
 	}
 	/**
 	 * Initially I will read the input from STDIN.
