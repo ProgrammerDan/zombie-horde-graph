@@ -53,7 +53,7 @@ public class ZombieHordeMin {
 		ffOn=true;
 		for (int mD = 1; mD <= aMD; mD++) {
 			System.out.printf("Checking len %d\n", mD);
-			int k = ffRoute(0,mD);
+			int k = ffR(0,mD);
 			if (ww>-1){
 				System.out.printf("%d x\n", ww+1);
 				for (int win=0; win<=ww;win++)
@@ -70,9 +70,9 @@ public class ZombieHordeMin {
 			}
 		}
 	}
-	int ffRoute(int depth, int maxDepth){
+	int ffR(int dP, int mD){
 		if (ff==0)
-			return pR(depth, maxDepth);
+			return pR(dP, mD);
 		int kk=0;
 		int fm=ff;
 		if (ffOn&&D*fm>rt.maxMemory()/(faf[0][0]*8+12))
@@ -83,114 +83,110 @@ public class ZombieHordeMin {
 			ff=0;
 		}
 		for (int df=0;df<fm;df++){
-			decompressSparse(fmv[df]);
-			kk+=pR(fmv[df][0],maxDepth);
+			dS(fmv[df]);
+			kk+=pR(fmv[df][0],mD);
 		}
 		fmv=null;
 		rt.gc();
 		return kk==fm?1:0;
 	}
-	int pR(int depth, int maxDepth){
-		if (depth==maxDepth)
+	int pR(int dP, int mD){
+		if (dP==mD)
 			return 0;
-		int rTested = 0;
-		int deathCount = 0;
-		int source = r[depth][m];
-		int startammo = r[depth][0];
-		for(int dest=1;dest<m;dest++){
-			for (int route=1;route<=p[source][dest][0];route++){
-				rTested++;
-				r[depth+1][0]=startammo-p[source][dest][route]+r[depth][dest];
+		int rT = 0;
+		int dC = 0;
+		int src = r[dP][m];
+		int sa = r[dP][0];
+		for(int dt=1;dt<m;dt++){
+			for (int rut=1;rut<=p[src][dt][0];rut++){
+				rT++;
+				r[dP+1][0]=sa-p[src][dt][rut]+r[dP][dt];
 				for (int cp=1;cp<m;cp++)
-					r[depth+1][cp]=(dest==cp?1:r[depth][cp]+1);
-				r[depth+1][m]=dest;
-				r[depth+1][m+1]=route;
-				r[depth+1][m+2]=r[depth][m+2]+p[source][dest][route];
-				if (startammo-p[source][dest][route]<1){
-					deathCount++; 
-					if (pp<r[depth][m+2]+startammo){
-						pp=r[depth][m+2]+startammo;
-						dd=depth+1;
-						bdr=new int[depth+2][3];
-						for (int copy=0;copy<=depth+1;copy++){
-							bdr[copy][0]=r[copy][m];
-							bdr[copy][1]=r[copy][m+1];
-							bdr[copy][2]=r[copy][0];
+					r[dP+1][cp]=(dt==cp?1:r[dP][cp]+1);
+				r[dP+1][m]=dt;
+				r[dP+1][m+1]=rut;
+				r[dP+1][m+2]=r[dP][m+2]+p[src][dt][rut];
+				if (sa-p[src][dt][rut]<1){
+					dC++; 
+					if (pp<r[dP][m+2]+sa){
+						pp=r[dP][m+2]+sa;
+						dd=dP+1;
+						bdr=new int[dP+2][3];
+						for (int cp=0;cp<=dP+1;cp++){
+							bdr[cp][0]=r[cp][m];
+							bdr[cp][1]=r[cp][m+1];
+							bdr[cp][2]=r[cp][0];
 						}
 					}
 				} else {
-					int countChecks=0;
-					int[] dCheck = new int[m];
-					for (int check=0;check<=depth;check++){
-						if (r[check][m]==dest){
-							int followRoute=check+1;
+					for (int chk=0;chk<=dP;chk++){
+						if (r[chk][m]==dt){
+							int fR=chk+1;
 							for (int cM=0;cM<m+3;cM++)
-								r[depth+2][cM]=r[depth+1][cM];
-							for (;followRoute<=depth+1; followRoute++){
-								r[depth+2][0]=r[depth+2][0]
-										-p[r[depth+2][m]][r[followRoute][m]][r[followRoute][m+1]]
-										+r[depth+2][r[followRoute][m]];
+								r[dP+2][cM]=r[dP+1][cM];
+							for (;fR<=dP+1; fR++){
+								r[dP+2][0]=r[dP+2][0]-p[r[dP+2][m]][r[fR][m]][r[fR][m+1]]+r[dP+2][r[fR][m]];
 								for (int cp=1;cp<m;cp++)
-									r[depth+2][cp]=(r[followRoute][m]==cp?1:r[depth+2][cp]+1);
-								r[depth+2][m+2]=r[depth+2][m+2]+p[r[depth+2][m]][r[followRoute][m]][r[followRoute][m+1]];
-								r[depth+2][m]=r[followRoute][m];
-								r[depth+2][m+1]=r[followRoute][m+1];
+									r[dP+2][cp]=(r[fR][m]==cp?1:r[dP+2][cp]+1);
+								r[dP+2][m+2]=r[dP+2][m+2]+p[r[dP+2][m]][r[fR][m]][r[fR][m+1]];
+								r[dP+2][m]=r[fR][m];
+								r[dP+2][m+1]=r[fR][m+1];
 							}
-							if (followRoute==depth+2&&r[depth+2][0]>=r[depth+1][0]){
-								ww=depth+1;
-								bwr=new int[depth+2][3];
-								for (int copy=0;copy<depth+2;copy++){
-									bwr[copy][0]=r[copy][m];
-									bwr[copy][1]=r[copy][m+1];
-									bwr[copy][2]=r[copy][0];
+							if (fR==dP+2&&r[dP+2][0]>=r[dP+1][0]){
+								ww=dP+1;
+								bwr=new int[dP+2][3];
+								for (int cp=0;cp<dP+2;cp++){
+									bwr[cp][0]=r[cp][m];
+									bwr[cp][1]=r[cp][m+1];
+									bwr[cp][2]=r[cp][0];
 								}
 								return 0;
 							}
 						}
 					}
-					deathCount+=pR(depth+1, maxDepth);
+					dC+=pR(dP+1, mD);
 					if (ww>-1)
 						return 0;
 				}
 				for (int cp=0;cp<m+3;cp++)
-					r[depth+1][cp]=0;
+					r[dP+1][cp]=0;
 			}
 		}
-		if (rTested==deathCount)
+		if (rT==dC)
 			return 1;
 		else {
-			if (ffOn&&depth == maxDepth-1) 
-				faf[ff++]=compress(depth);
+			if (ffOn&&dP == mD-1) 
+				faf[ff++]=cP(dP);
 			return 0;
 		}
 	}
-	int[]compress(int depth){
-		int[]cmp=new int[depth*2+3];
-		cmp[0]=depth;
-		cmp[depth*2+1]=r[depth][0];
-		cmp[depth*2+2]=r[depth][m+2];
-		for(int zip=1;zip<=depth;zip++){
+	int[]cP(int dP){
+		int[]cmp=new int[dP*2+3];
+		cmp[0]=dP;
+		cmp[dP*2+1]=r[dP][0];
+		cmp[dP*2+2]=r[dP][m+2];
+		for(int zip=1;zip<=dP;zip++){
 			cmp[zip]=r[zip][m];
-			cmp[depth+zip]=r[zip][m+1];
+			cmp[dP+zip]=r[zip][m+1];
 		}
 		return cmp;
 	}
-	void decompressSparse(int[]cmp){
+	void dS(int[]cmp){
 		int[]lv=new int[m];
-		int depth=cmp[0];
-		r[depth][0]=cmp[depth*2+1];
-		r[depth][m+2]=cmp[depth*2+2];
+		int dP=cmp[0];
+		r[dP][0]=cmp[dP*2+1];
+		r[dP][m+2]=cmp[dP*2+2];
 		r[0][0]=100;
 		r[0][m]=1;
-		for(int dp=1;dp<=depth;dp++){
+		for(int dp=1;dp<=dP;dp++){
 			r[dp][m]=cmp[dp];
-			r[dp][m+1]=cmp[depth+dp];
+			r[dp][m+1]=cmp[dP+dp];
 			r[dp-1][cmp[dp]]=dp-lv[cmp[dp]];
-			r[dp][m+2]=r[dp-1][m+2]+p[r[dp-1][m]][cmp[dp]][cmp[depth+dp]];
-			r[dp][0]=r[dp-1][0]+r[dp-1][cmp[dp]]-p[r[dp-1][m]][cmp[dp]][cmp[depth+dp]];
+			r[dp][m+2]=r[dp-1][m+2]+p[r[dp-1][m]][cmp[dp]][cmp[dP+dp]];
+			r[dp][0]=r[dp-1][0]+r[dp-1][cmp[dp]]-p[r[dp-1][m]][cmp[dp]][cmp[dP+dp]];
 			lv[cmp[dp]]=dp;
 		}
 		for(int am=1;am<m;am++)
-			r[depth][am]=(am==cmp[depth]?1:depth-lv[am]+1);
+			r[dP][am]=(am==cmp[dP]?1:dP-lv[am]+1);
 	}
 }
