@@ -1,8 +1,7 @@
-import java.util.Scanner;
+import java.util.*;
 public class ZombieHordeExponential {
-	int a=100,b,m,n,i,j,r,z,d,y,D,R,Z,N;
+	int a=100,b,m,n,i,j,r,z,d,y,D=0,R,Z,N;
 	int p[][][];
-	int o[];
 	Scanner in;
 	Runtime rt;
 	public static void main(String[]a){
@@ -25,14 +24,15 @@ public class ZombieHordeExponential {
 		m = in.nextInt();
 		N = in.nextInt();
 		p = new int[m+1][m+1][N+1];
-		o = new int[m+1];
 		for (b=0;b<N;b++){
 			i = in.nextInt();
 			j = in.nextInt();
 			z = in.nextInt();
 			p[i][j][++p[i][j][0]]=z;
+			D=(p[i][j][0]>D?p[i][j][0]:D);
 			if (i!=j)
 				p[j][i][++p[j][i][0]]=z;
+			D=(p[j][i][0]>D?p[j][i][0]:D);
 		}
 		m++; // "base 1ify"
 	}
@@ -41,11 +41,9 @@ public class ZombieHordeExponential {
 
 	void pickRoute() {
 		System.out.println("Starting to pick a route!");
-		for (int b=1;b<m;b++) // prep the outposts for our first move.
-			o[b]++;
 		routes = new int[5000][m+3];
 		routes[0][0]=a; // ammo before moving
-		System.arraycopy(o,1,routes[0],1,m-1); // ammo in outpost before moving
+		Arrays.fill(routes[0],1,m,1); // ammo in outpost before moving
 		routes[0][m]=1; // outpost to go to next
 		routes[0][m+1]=0; // route to follow
 		routes[0][m+2]=0; // zombies killed so far including # killed going to next outpost
