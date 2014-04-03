@@ -1,0 +1,25 @@
+$ time java -Xmx1G ZombieHordeMin > smaller_route_timing.out
+5 6 1 2 4 2 3 4 3 1 4 2 4 8 2 5 8 1 1 50
+Checking len 1
+Checking len 2
+Checking len 3
+Checking len 4
+Checking len 5
+Checking len 6
+Checking len 7
+Checking len 8
+Checking len 9
+Checking len 10
+Checking len 11
+Checking len 12
+Checking len 13
+Checking len 14
+Checking len 15
+Checking len 16
+17 x
+ 0:1,0-100 1:3,1-97 2:2,1-95 3:5,1-90 4:2,1-84 5:3,1-84 6:2,1-82 7:3,1-80 8:2,1-78 9:3,1-76 10:2,1-74 11:3,1-72 12:1,1-80 13:2,1-79 14:4,1-85 15:2,1-79 16:1,1-79
+
+real    0m38.907s
+user    0m0.000s
+sys     0m0.031s
+
