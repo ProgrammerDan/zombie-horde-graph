@@ -24,15 +24,18 @@ public class ZombieHordeExponential {
 		m = in.nextInt();
 		N = in.nextInt();
 		p = new int[m+1][m+1][N+1];
+		int[]o=new int[m+1];
 		for (b=0;b<N;b++){
 			i = in.nextInt();
 			j = in.nextInt();
 			z = in.nextInt();
 			p[i][j][++p[i][j][0]]=z;
-			D=(p[i][j][0]>D?p[i][j][0]:D);
+			o[i]++;
+			o[j]++;
+			D=(o[i]>D?o[i]:D);
 			if (i!=j)
 				p[j][i][++p[j][i][0]]=z;
-			D=(p[j][i][0]>D?p[j][i][0]:D);
+			D=(o[j]>D?o[j]:D); // Count highest node order. Used as our growth factor for memory use.
 		}
 		m++; // "base 1ify"
 	}
@@ -67,13 +70,16 @@ public class ZombieHordeExponential {
 	long[] liveBranches;
 	int fastforward[][];
 	int ff;
+	int frameSize=1000;
+	int maxFrames=0;
 	boolean ffOn;
 
 	/** 
 	 * IDDF approach to picking a route. Keep trying deeper depths until we find a solution.
 	 */
 	void pickRoute(int absoluteMaxDepth){
-		fastforward = new int[N][];
+		maxFrames=(D/frameSize)+1;
+		fastforward = new int[D][];
 		ff=0;
 		ffOn=true;
 		for (int mD = 1; mD <= absoluteMaxDepth; mD++) {
@@ -90,7 +96,7 @@ public class ZombieHordeExponential {
 			//for(int qq=0;qq<mD;qq++)
 			//	System.out.printf("%3d: %10d %10d %10d\n",qq,totalBranches[qq],deadBranches[qq],liveBranches[qq]);
 			if (winwin<Integer.MAX_VALUE){
-				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin);
+				System.out.printf("Cycle found, perfect survival -- %d steps\n", winwin+1);
 				for (int win=0; win<=winwin;win++){
 					System.out.printf(" %d:%d,%d-%d",win,bestWinRoute[win][0],bestWinRoute[win][1],bestWinRoute[win][2]);
 				}
@@ -98,7 +104,7 @@ public class ZombieHordeExponential {
 				break;
 			}
 			if (k > 0) {
-				System.out.printf("All routes resolve to death. Best route: %d kills in %d steps\n", pewpew, diedie);
+				System.out.printf("All routes resolve to death. Best route: %d kills in %d steps\n", pewpew, diedie+1);
 				for (int die=0; die<=diedie;die++){
 					System.out.printf(" %d:%d,%d-%d",die,bestDeadRoute[die][0],bestDeadRoute[die][1],bestDeadRoute[die][2]);
 				}
@@ -114,14 +120,14 @@ public class ZombieHordeExponential {
 		}
 		int kk=0;
 		int fm=ff;
-		if (ffOn&&N*fm>rt.maxMemory()/(fastforward[0][0]*8+12))
+		if (ffOn&&D*fm>rt.maxMemory()/(fastforward[0][0]*8+12))
 			ffOn=false;
 
 		int[][] fastmovement = fastforward;
 
 		if (ffOn){
-			System.out.printf("Allocating %d ff entries as it is <= %d\n", N*fm, rt.maxMemory()/(fastforward[0][0]*8+12));
-			fastforward = new int[N*fm][];
+			System.out.printf("Allocating %d ff entries as it is <= %d\n", D*fm, rt.maxMemory()/(fastforward[0][0]*8+12));
+			fastforward = new int[D*fm][];
 			ff=0;
 		}
 
@@ -181,20 +187,19 @@ public class ZombieHordeExponential {
 						}
 						System.out.println();
 					}
-				} else if (startammo-p[source][dest][route]+routes[depth][dest]>=startammo+p[source][dest][route]) {// maybe win?
+				} else {
+					// Check for death.
 					winTestRoutes++;
-					int checkStartAmmo=startammo-p[source][dest][route]+routes[depth][dest];
 					int countChecks=0;
 					int[] dCheck = new int[m];
 					// Try to find a point in the current route that we can re-enter the route (a cycle)
-					for (int check=depth;check>=0;check--){
+					for (int check=0;check<=depth;check++){
 						if (routes[check][m]==dest){ // we can start back into the route from this identical point.
 							// prep top of the stack for a simple route follow.
-							int fDepth = depth + 1 - check;
 							int followRoute=check+1;
 							for (int cM=0;cM<m+3;cM++) // copy prior stack frame forward to act as re-tread start
 								routes[depth+2][cM]=routes[depth+1][cM];
-							for (;followRoute<=depth; followRoute++){
+							for (;followRoute<=depth+1; followRoute++){
 								routes[depth+2][0]=routes[depth+2][0] // start with current ammo
 										-p[ routes[depth+2][m] ][ routes[followRoute][m] ][ routes[followRoute][m+1] ] // subtract zombies on route taken
 										+routes[depth+2][ routes[followRoute][m] ]; // add in ammo gained on arrival
@@ -206,7 +211,7 @@ public class ZombieHordeExponential {
 								routes[depth+2][m]=routes[followRoute][m];
 								routes[depth+2][m+1]=routes[followRoute][m+1];
 							}
-							if (followRoute==depth+1&&routes[depth+2][0]>=routes[depth+1][0]){ // we are back where we started after retracing, with equal or more ammo.
+							if (followRoute==depth+2&&routes[depth+2][0]>=routes[depth+1][0]){ // we are back where we started after retracing, with equal or more ammo.
 								System.out.printf("Found and confirmed win in %d moves by retracing full route starting with step %d", depth, check);
 								if (depth+1 < winwin) { // quicker win!
 									System.out.print(" and is new best win path!\n");
@@ -223,11 +228,6 @@ public class ZombieHordeExponential {
 						}
 					}
 					// Not a win, tried every possible legal cycle
-					deathCount+=pickRoute(depth+1, maxDepth);
-					if (winwin < Integer.MAX_VALUE)// short circuit on win found.
-						return 0;
-				}else {
-					// no death or win, move to next depth
 					deathCount+=pickRoute(depth+1, maxDepth);
 					if (winwin < Integer.MAX_VALUE)// short circuit on win found.
 						return 0;

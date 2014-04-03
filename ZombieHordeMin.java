@@ -1,6 +1,6 @@
 import java.util.*;
 public class ZombieHordeMin {
-	int a=100,b,m,n,i,j,z,y,D,R,Z,N;
+	int a=100,b,m,n,i,j,z,y,D=0,R,Z,N;
 	int p[][][];
 	Scanner in;
 	Runtime rt;
@@ -22,13 +22,18 @@ public class ZombieHordeMin {
 		m = in.nextInt();
 		N = in.nextInt();
 		p = new int[m+1][m+1][N+1];
+		int[]o=new int[m+1];
 		for (b=0;b<N;b++){
 			i = in.nextInt();
 			j = in.nextInt();
 			z = in.nextInt();
+			o[i]++;
+			o[j]++;
+			D=(o[i]>D?o[i]:D);
 			p[i][j][++p[i][j][0]]=z;
 			if (i!=j)
 				p[j][i][++p[j][i][0]]=z;
+			D=(o[j]>D?o[j]:D);
 		}
 		m++;
 	}
@@ -43,7 +48,7 @@ public class ZombieHordeMin {
 		pR(5000);
 	}
 	void pR(int aMD){
-		faf = new int[N][];
+		faf = new int[D][];
 		ff=0;
 		ffOn=true;
 		for (int mD = 1; mD <= aMD; mD++) {
@@ -70,18 +75,18 @@ public class ZombieHordeMin {
 			return pR(depth, maxDepth);
 		int kk=0;
 		int fm=ff;
-		if (ffOn&&N*fm>rt.maxMemory()/(faf[0][0]*8+12))
+		if (ffOn&&D*fm>rt.maxMemory()/(faf[0][0]*8+12))
 			ffOn=false;
-		int[][] fastmovement = faf;
+		int[][] fmv = faf;
 		if (ffOn){
-			faf = new int[N*fm][];
+			faf = new int[D*fm][];
 			ff=0;
 		}
 		for (int df=0;df<fm;df++){
-			decompressSparse(fastmovement[df]);
-			kk+=pR(fastmovement[df][0],maxDepth);
+			decompressSparse(fmv[df]);
+			kk+=pR(fmv[df][0],maxDepth);
 		}
-		fastmovement=null;
+		fmv=null;
 		rt.gc();
 		return kk==fm?1:0;
 	}
@@ -113,17 +118,15 @@ public class ZombieHordeMin {
 							bdr[copy][2]=r[copy][0];
 						}
 					}
-				} else if (startammo-p[source][dest][route]+r[depth][dest]>=startammo+p[source][dest][route]) {
-					int checkStartAmmo=startammo-p[source][dest][route]+r[depth][dest];
+				} else {
 					int countChecks=0;
 					int[] dCheck = new int[m];
-					for (int check=depth;check>=0;check--){
+					for (int check=0;check<=depth;check++){
 						if (r[check][m]==dest){
-							int fDepth = depth + 1 - check;
 							int followRoute=check+1;
 							for (int cM=0;cM<m+3;cM++)
 								r[depth+2][cM]=r[depth+1][cM];
-							for (;followRoute<=depth; followRoute++){
+							for (;followRoute<=depth+1; followRoute++){
 								r[depth+2][0]=r[depth+2][0]
 										-p[r[depth+2][m]][r[followRoute][m]][r[followRoute][m+1]]
 										+r[depth+2][r[followRoute][m]];
@@ -133,7 +136,7 @@ public class ZombieHordeMin {
 								r[depth+2][m]=r[followRoute][m];
 								r[depth+2][m+1]=r[followRoute][m+1];
 							}
-							if (followRoute==depth+1&&r[depth+2][0]>=r[depth+1][0]){
+							if (followRoute==depth+2&&r[depth+2][0]>=r[depth+1][0]){
 								ww=depth+1;
 								bwr=new int[depth+2][3];
 								for (int copy=0;copy<depth+2;copy++){
@@ -145,10 +148,6 @@ public class ZombieHordeMin {
 							}
 						}
 					}
-					deathCount+=pR(depth+1, maxDepth);
-					if (ww>-1)
-						return 0;
-				}else {
 					deathCount+=pR(depth+1, maxDepth);
 					if (ww>-1)
 						return 0;
